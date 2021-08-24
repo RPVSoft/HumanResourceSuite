@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HumanResourceSuite.ApplicationInterfaceEndpoints</name>
+    </assembly>
+    <members>
+        <member name="T:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.MasterController">
+            <summary>
+            Master Controller - Handles master data operations
+            </summary>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.MasterController.#ctor(Microsoft.Extensions.Logging.ILogger{HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.MasterController},Microsoft.Extensions.Options.IOptions{HumanResourceSuite.Common.Framework.AppSettings},HumanResourceSuite.BusinessProviders.IProviders.IMasterProvider)">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+            <param name="options"></param>
+            <param name="masterProvider"></param>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.MasterController.Get(System.Int32)">
+            <summary>
+            Get master data based on master type id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.MasterController.GetAll">
+            <summary>
+            Get all master data from database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HumanResourceSuite.ApplicationInterfaceEndpoints.Framework.HumanResourceSuiteControllerBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Framework.HumanResourceSuiteControllerBase.InternalServerError(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,39 @@
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.deps.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.AssemblyInfoInputs.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.AssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.deps.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.AssemblyInfoInputs.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.AssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.Common.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataProviders.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataProviders.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.Common.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.csprojAssemblyReference.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.csproj.CopyComplete
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.deps.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.Common.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataProviders.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataProviders.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.Common.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.csproj.AssemblyReference.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.GeneratedMSBuildEditorConfig.editorconfig
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.AssemblyInfoInputs.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.AssemblyInfo.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.csproj.CoreCompileInputs.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.csproj.CopyComplete
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.BusinessProvider\obj\Debug\netcoreapp3.1\HumanResourceSuite.BusinessProviders.pdb

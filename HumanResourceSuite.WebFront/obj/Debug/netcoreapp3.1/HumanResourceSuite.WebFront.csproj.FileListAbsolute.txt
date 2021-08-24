@@ -1,0 +1,112 @@
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.exe
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.deps.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.runtimeconfig.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.runtimeconfig.dev.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csprojAssemblyReference.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\staticwebassets\HumanResourceSuite.WebFront.StaticWebAssets.Manifest.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\staticwebassets\HumanResourceSuite.WebFront.StaticWebAssets.xml
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.MvcApplicationPartsAssemblyInfo.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorAssemblyInfo.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorAssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.AssemblyInfoInputs.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.AssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.TagHelpers.input.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.TagHelpers.output.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorCoreGenerate.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorTargetAssemblyInfo.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorTargetAssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csproj.CopyComplete
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.exe
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.deps.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.runtimeconfig.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.runtimeconfig.dev.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\staticwebassets\HumanResourceSuite.WebFront.StaticWebAssets.Manifest.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\staticwebassets\HumanResourceSuite.WebFront.StaticWebAssets.xml
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorAssemblyInfo.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorAssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.AssemblyInfoInputs.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.AssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.TagHelpers.input.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.TagHelpers.output.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorCoreGenerate.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorTargetAssemblyInfo.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorTargetAssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csproj.CopyComplete
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csprojAssemblyReference.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\appsettings.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.exe
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.deps.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.runtimeconfig.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.runtimeconfig.dev.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csproj.AssemblyReference.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.GeneratedMSBuildEditorConfig.editorconfig
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.AssemblyInfoInputs.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.AssemblyInfo.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csproj.CoreCompileInputs.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.MvcApplicationPartsAssemblyInfo.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorAssemblyInfo.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorAssemblyInfo.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\staticwebassets\HumanResourceSuite.WebFront.StaticWebAssets.Manifest.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\staticwebassets\HumanResourceSuite.WebFront.StaticWebAssets.xml
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\scopedcss\bundle\HumanResourceSuite.WebFront.styles.css
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.TagHelpers.input.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.TagHelpers.output.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorCoreGenerate.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorTargetAssemblyInfo.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.RazorTargetAssemblyInfo.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.Views.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.csproj.CopyComplete
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.WebFront\obj\Debug\netcoreapp3.1\HumanResourceSuite.WebFront.genruntimeconfig.cache

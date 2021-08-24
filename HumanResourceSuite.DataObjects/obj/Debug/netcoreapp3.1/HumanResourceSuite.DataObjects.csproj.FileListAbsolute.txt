@@ -1,0 +1,26 @@
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.deps.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.csprojAssemblyReference.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.AssemblyInfoInputs.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.AssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumarResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.deps.json
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.AssemblyInfoInputs.cache
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.AssemblyInfo.cs
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+D:\Personal W\HumanResourceSuite\Source Code\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.csprojAssemblyReference.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.deps.json
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\bin\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.csproj.AssemblyReference.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.GeneratedMSBuildEditorConfig.editorconfig
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.AssemblyInfoInputs.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.AssemblyInfo.cs
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.csproj.CoreCompileInputs.cache
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.dll
+C:\RMSSolution\HumanResourceSuite\HumanResourceSuite.DataObjects\obj\Debug\netcoreapp3.1\HumanResourceSuite.DataObjects.pdb
