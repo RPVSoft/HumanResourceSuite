@@ -48,7 +48,7 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
         [Produces("application/json")]
         public IActionResult Get(int id)
         {
-            ResponseDTO<MasterDTO> response = new ResponseDTO<MasterDTO>();
+            MultiResponseDTO<MasterDTO> response = new MultiResponseDTO<MasterDTO>();
             Exception exception;
             response.Data = _masterProvider.Get(id, _options.Value, out exception);
             if (exception != null)
@@ -75,7 +75,7 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
         [Produces("application/json")]
         public IActionResult GetAll()
         {
-            ResponseDTO<MasterDTO> response = new ResponseDTO<MasterDTO>();
+            MultiResponseDTO<MasterDTO> response = new MultiResponseDTO<MasterDTO>();
             Exception exception;
             response.Data = _masterProvider.GetAll(_options.Value, out exception);
             if (exception != null)

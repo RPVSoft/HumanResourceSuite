@@ -4,6 +4,86 @@
         <name>HumanResourceSuite.ApplicationInterfaceEndpoints</name>
     </assembly>
     <members>
+        <member name="T:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController">
+            <summary>
+            Company Controller - Handles Company data operations
+            </summary>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController.#ctor(Microsoft.Extensions.Logging.ILogger{HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController},Microsoft.Extensions.Options.IOptions{HumanResourceSuite.Common.Framework.AppSettings},HumanResourceSuite.BusinessProviders.IProviders.ICompanyProvider)">
+            <summary>
+            Company Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="options"></param>
+            <param name="companyProvider"></param>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController.GetCompanyDetailsById(System.Int32)">
+            <summary>
+            Get Company Details By Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController.GetCompanyDetails">
+            <summary>
+            Get Company Details
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController.InsertCompanyDetails(HumanResourceSuite.DataObjects.CompanyDTO)">
+            <summary>
+            Feed Company Details
+            </summary>
+            <param name="companyDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController.UpdateCompanyDetails(HumanResourceSuite.DataObjects.CompanyDTO)">
+            <summary>
+            Modify Company Details
+            </summary>
+            <param name="companyDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.CompanyController.DeleteCompanyDetails(System.Int32)">
+            <summary>
+            Delete Company Details
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.LeadsController">
+            <summary>
+            Leads Controller - Handles Leads data operations
+            </summary>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.LeadsController.#ctor(Microsoft.Extensions.Logging.ILogger{HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.LeadsController},Microsoft.Extensions.Options.IOptions{HumanResourceSuite.Common.Framework.AppSettings},HumanResourceSuite.BusinessProviders.IProviders.ILeadsProvider)">
+            <summary>
+            Lead Contructor
+            </summary>
+            <param name="logger"></param>
+            <param name="options"></param>
+            <param name="leadsProvider"></param>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.LeadsController.GetLeadsById(System.Int32)">
+            <summary>
+            GetLeadsById
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.LeadsController.GetAllLeads">
+            <summary>
+            Get all Leads
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.LeadsController.CreateLeads(HumanResourceSuite.DataObjects.LeadsDTO)">
+            <summary>
+            Insert Leads into the Database
+            </summary>
+            <param name="leadsDTO"></param>
+            <returns></returns>
+        </member>
         <member name="T:HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers.MasterController">
             <summary>
             Master Controller - Handles master data operations

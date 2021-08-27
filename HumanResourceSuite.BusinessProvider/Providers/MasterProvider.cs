@@ -11,7 +11,7 @@ using System.Text;
 
 namespace HumanResourceSuite.BusinessProviders.Providers
 {
-    public class MasterProvider : BaseProvider, IMasterProvider
+    public class MasterProvider : BaseProvider,IMasterProvider 
     {
 
         private IMasterRepository _masterRepository;
@@ -63,6 +63,8 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             }
 
             return dataToReturn;
-        }
+        }      
+
+
     }
 }

@@ -46,6 +46,40 @@ namespace HumanResourceSuite.DataProviders.Configurations
             }
             return _value;
         }
+        /// <summary>
+        /// Date Time Value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        protected DateTime GetDateTimeValue(object value)
+        {
+            DateTime _value = default(DateTime);
+            if (value == DBNull.Value)
+            {
+                return default(DateTime);
+            }
+            else
+            {
+                DateTime.TryParse(Convert.ToString(value), out _value);
+            }
+
+            return _value;
+        }
+
+        protected bool GetBitValue(object value)
+        {
+            bool _value = false;
+            if (value == DBNull.Value)
+            {
+                return false;
+            }
+            else
+            {
+                bool.TryParse(Convert.ToString(value), out _value);
+            }
+
+            return _value;
+        }
 
     }
 }

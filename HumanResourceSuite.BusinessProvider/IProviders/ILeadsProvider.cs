@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HumanResourceSuite.DataProviders.IRepository
+namespace HumanResourceSuite.BusinessProviders.IProviders
 {
-    public interface ILeadRepository
+   public interface ILeadsProvider
     {
         public List<LeadsDTO> GetAllLeads(AppSettings settings, out Exception ex);
         public LeadsDTO GetLeadsById(int id, AppSettings settings, out Exception ex);
