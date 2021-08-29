@@ -163,5 +163,130 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
                 Response.StatusCode = StatusCodes.Status200OK;
             return new JsonResult(response);
         }
+
+        /// <summary>
+        /// Get Office Location Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Getlocationbyid/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetOfficeLocationDetailsById(int id)
+        {
+            SingleResponseDTO<OfficeLocationDTO> response = new SingleResponseDTO<OfficeLocationDTO>();
+            Exception exception;
+            response.Result = _companyProvider.GetOfficeLocationDetailsById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Get Office Location Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Getallofficelocations")]
+        [Produces("application/json")]
+        public IActionResult GetOfficeLocationDetails()
+        {
+            MultiResponseDTO<OfficeLocationDTO> response = new MultiResponseDTO<OfficeLocationDTO>();
+            Exception exception;
+            response.Data = _companyProvider.GetOfficeLocationDetails(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Insert Office Location
+        /// </summary>
+        /// <param name="officeLocationDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("Insertofficelocation")]
+        [Produces("application/json")]
+        public IActionResult InsertOfficeLocationDetails([FromBody] OfficeLocationDTO officeLocationDTO)
+        {
+            SingleResponseDTO<OfficeLocationDTO> response = new SingleResponseDTO<OfficeLocationDTO>();
+            Exception exception;
+            response.Result = _companyProvider.InsertOfficeLocationDetails(officeLocationDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Update Office Location Details
+        /// </summary>
+        /// <param name="officeLocationDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("Updateofficelocation")]
+        [Produces("application/json")]
+        public IActionResult UpdateOfficeLocationDetails([FromBody] OfficeLocationDTO officeLocationDTO)
+        {
+            SingleResponseDTO<OfficeLocationDTO> response = new SingleResponseDTO<OfficeLocationDTO>();
+            Exception exception;
+            response.Result = _companyProvider.UpdateOfficeLocationDetails(officeLocationDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Remove Office Location
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("Deleteofficelocation/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult DeleteOfficeLocationDetails(int id)
+        {
+            SingleResponseDTO<string> response = new SingleResponseDTO<string>();
+            Exception exception;
+            response.Result = _companyProvider.DeleteOfficeLocationDetails(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (string.IsNullOrEmpty(response.Result))
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
     }   
 }

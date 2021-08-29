@@ -118,5 +118,107 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             }
             return result;
         }
+        /// <summary>
+        /// Get Office Location Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<OfficeLocationDTO> GetOfficeLocationDetails(AppSettings settings, out Exception ex)
+        {
+            List<OfficeLocationDTO> officeLocationDTOs = null;
+            try
+            {
+                officeLocationDTOs = _companyRepository.GetOfficeLocationDetails(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return officeLocationDTOs;
+
+        }
+
+        /// <summary>
+        /// Get Office Location By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public OfficeLocationDTO GetOfficeLocationDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            OfficeLocationDTO officeLocationDTO = null;
+            try
+            {
+                officeLocationDTO = _companyRepository.GetOfficeLocationDetailsById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return officeLocationDTO;
+        }
+
+        /// <summary>
+        /// Insert Office Location Details
+        /// </summary>
+        /// <param name="officeLocationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public OfficeLocationDTO InsertOfficeLocationDetails(OfficeLocationDTO officeLocationDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                officeLocationDTO = _companyRepository.InsertOfficeLocationDetails(officeLocationDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return officeLocationDTO;
+        }
+
+        /// <summary>
+        /// Update Office Location Details
+        /// </summary>
+        /// <param name="officeLocationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public OfficeLocationDTO UpdateOfficeLocationDetails(OfficeLocationDTO officeLocationDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                officeLocationDTO = _companyRepository.UpdateOfficeLocationDetails(officeLocationDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return officeLocationDTO;
+        }
+
+        /// <summary>
+        /// Remove Office Location Details
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public string DeleteOfficeLocationDetails(int id, AppSettings settings, out Exception ex)
+        {
+            string result = null;
+            try
+            {
+                result = _companyRepository.DeleteOfficeLocationDetails(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return result;
+        }
     }
 }

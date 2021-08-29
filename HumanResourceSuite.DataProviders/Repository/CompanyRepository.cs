@@ -158,7 +158,7 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@modified_by", companyDTO.modified_by);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();                    
                 }
             }
             catch (Exception exMsg)
@@ -249,5 +249,212 @@ namespace HumanResourceSuite.DataProviders.Repository
             }
             return result;
         }
+
+        /// <summary>
+        /// Get Office Location
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<OfficeLocationDTO> GetOfficeLocationDetails(AppSettings settings, out Exception ex)
+        {
+            List<OfficeLocationDTO> dataToReturn = new List<OfficeLocationDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetOfficeLocation, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        OfficeLocationDTO data = new OfficeLocationDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.title = GetStringValue(reader["title"]);
+                        data.CountryId = GetIntegerValue(reader["CountryId"]);
+                        data.StateId = GetIntegerValue(reader["StateId"]);
+                        data.Address_text = GetStringValue(reader["Address_text"]);
+                        data.CityId = GetIntegerValue(reader["CityId"]);
+                        data.CompanyId = GetIntegerValue(reader["CompanyId"]);
+                        data.Active = GetBitValue(reader["Active"]);
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+        /// <summary>
+        /// Get Office Location By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public OfficeLocationDTO GetOfficeLocationDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            OfficeLocationDTO data = new OfficeLocationDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetOfficeLocationById, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if(reader.Read())
+                    {                        
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.title = GetStringValue(reader["title"]);
+                        data.CountryId = GetIntegerValue(reader["CountryId"]);
+                        data.StateId = GetIntegerValue(reader["StateId"]);
+                        data.Address_text = GetStringValue(reader["Address_text"]);
+                        data.CityId = GetIntegerValue(reader["CityId"]);
+                        data.CompanyId = GetIntegerValue(reader["CompanyId"]);
+                        data.Active = GetBitValue(reader["Active"]);
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);                        
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+
+        /// <summary>
+        /// Insert Office Location Details
+        /// </summary>
+        /// <param name="officeLocationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public OfficeLocationDTO InsertOfficeLocationDetails(OfficeLocationDTO officeLocationDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertOfficeLocation, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@title", officeLocationDTO.title);
+                    cmd.Parameters.AddWithValue("@CountryId", officeLocationDTO.CountryId);
+                    cmd.Parameters.AddWithValue("@StateId", officeLocationDTO.StateId);
+                    cmd.Parameters.AddWithValue("@Address_text", officeLocationDTO.Address_text);
+                    cmd.Parameters.AddWithValue("@CityId", officeLocationDTO.CityId);
+                    cmd.Parameters.AddWithValue("@CompanyId", officeLocationDTO.CompanyId);
+                    cmd.Parameters.AddWithValue("@Active", true);                    
+                    cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return officeLocationDTO;
+        }
+
+        /// <summary>
+        /// Update Office Location Details
+        /// </summary>
+        /// <param name="officeLocationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public OfficeLocationDTO UpdateOfficeLocationDetails(OfficeLocationDTO officeLocationDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateOfficeLocation, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", officeLocationDTO.id);
+                    cmd.Parameters.AddWithValue("@title", officeLocationDTO.title);
+                    cmd.Parameters.AddWithValue("@CountryId", officeLocationDTO.CountryId);
+                    cmd.Parameters.AddWithValue("@StateId", officeLocationDTO.StateId);
+                    cmd.Parameters.AddWithValue("@Address_text", officeLocationDTO.Address_text);
+                    cmd.Parameters.AddWithValue("@CityId", officeLocationDTO.CityId);
+                    cmd.Parameters.AddWithValue("@CompanyId", officeLocationDTO.CompanyId);
+                    cmd.Parameters.AddWithValue("@Active", true);
+                    cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return officeLocationDTO;
+        }
+        public string DeleteOfficeLocationDetails(int id, AppSettings settings, out Exception ex)
+        {
+            string result = null;
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_DeleteOfficeLocation, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@active", false);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    int res = cmd.ExecuteNonQuery();
+                    if (res != 0)
+                    {
+                        result = "Office Location Removed Successfully";
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return result;
+        }
+
+
     }
 }
