@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Vendors] (
+    [id]                  INT            IDENTITY (1, 1) NOT NULL,
+    [company_id]          INT            NOT NULL,
+    [name]                NVARCHAR (100) NOT NULL,
+    [ctype]               INT            NOT NULL,
+    [address]             NVARCHAR (MAX) NOT NULL,
+    [gst_number]          NVARCHAR (50)  NULL,
+    [pan_number]          NVARCHAR (50)  NULL,
+    [contact_person]      NVARCHAR (50)  NOT NULL,
+    [contact_number]      NVARCHAR (50)  NOT NULL,
+    [contact_designation] NVARCHAR (50)  NULL,
+    [contact_email]       NVARCHAR (50)  NOT NULL,
+    [bank]                INT            NULL,
+    [account_no]          NVARCHAR (50)  NULL,
+    [ifsc_code]           NCHAR (10)     NULL,
+    [fax]                 NVARCHAR (50)  NULL,
+    [website]             NVARCHAR (50)  NULL,
+    [created_by]          NVARCHAR (50)  NOT NULL,
+    [created_date]        DATETIME       NOT NULL,
+    [modified_by]         NVARCHAR (50)  NULL,
+    [modified_date]       DATETIME       NULL,
+    CONSTRAINT [PK_Vendors_1] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_Vendors_Companies] FOREIGN KEY ([company_id]) REFERENCES [dbo].[Companies] ([id])
+);
+

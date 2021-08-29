@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourceSuite.ApplicationInterfaceEndpoints", "HumanResourceSuite.ApplicationInterfaceEndpoints\HumanResourceSuite.ApplicationInterfaceEndpoints.csproj", "{815850AB-5A03-43C4-8760-989227227947}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourceSuite.ApplicationInterfaceEndpoints", "HumanResourceSuite.ApplicationInterfaceEndpoints\HumanResourceSuite.ApplicationInterfaceEndpoints.csproj", "{815850AB-5A03-43C4-8760-989227227947}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourceSuite.BusinessProviders", "HumanResourceSuite.BusinessProvider\HumanResourceSuite.BusinessProviders.csproj", "{741B3B6D-E785-4958-8019-F9541E748CE2}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourceSuite.DataProviders", "HumanResourceSuite.DataProviders\HumanResourceSuite.DataProviders.csproj", "{5DAEB478-C54E-43AA-A6F9-322AC577EC11}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourceSuite.WebFront", "HumanResourceSuite.WebFront\HumanResourceSuite.WebFront.csproj", "{52370109-E1BA-436F-A5AB-33AD3E49F17D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HumanResourceSuite.Database", "HumanResourceSuite.Database\HumanResourceSuite.Database.sqlproj", "{A9FF7309-635E-4379-806D-504F1EA59622}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,12 @@ Global
 		{52370109-E1BA-436F-A5AB-33AD3E49F17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52370109-E1BA-436F-A5AB-33AD3E49F17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52370109-E1BA-436F-A5AB-33AD3E49F17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FF7309-635E-4379-806D-504F1EA59622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FF7309-635E-4379-806D-504F1EA59622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FF7309-635E-4379-806D-504F1EA59622}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A9FF7309-635E-4379-806D-504F1EA59622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FF7309-635E-4379-806D-504F1EA59622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FF7309-635E-4379-806D-504F1EA59622}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
