@@ -13,5 +13,13 @@ namespace HumanResourceSuite.BusinessProviders.IProviders
         public EmployeeDTO InsertEmployeeDetails(EmployeeDTO employeeDTO, AppSettings settings, out Exception ex);
         public EmployeeDTO UpdateEmployeeDetails(EmployeeDTO employeeDTO, AppSettings settings, out Exception ex);
         public string DeleteEmployeeDetails(int id, AppSettings settings, out Exception ex);
+
+        // Employee Address
+
+        public List<EmployeeAddressDTO> GetEmployeeAddress(AppSettings settings, out Exception ex);
+        public EmployeeAddressDTO GetEmployeeAddressById(int id, AppSettings settings, out Exception ex);
+        public EmployeeAddressDTO InsertEmployeeAddress(EmployeeAddressDTO employeeaddressDTO, AppSettings settings, out Exception ex);
+        public EmployeeAddressDTO UpdateEmployeeAddress(EmployeeAddressDTO employeeaddressDTO, AppSettings settings, out Exception ex);
+
     }
 }

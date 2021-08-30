@@ -26,6 +26,8 @@
     [created_date]                      DATETIME        NULL,
     [modified_by]                       NVARCHAR (50)   NULL,
     [modified_date]                     DATETIME        NULL,
-    CONSTRAINT [PK_EmployeeInvestmentDetails] PRIMARY KEY CLUSTERED ([id] ASC)
+    CONSTRAINT [PK_EmployeeInvestmentDetails] PRIMARY KEY CLUSTERED ([id] ASC), 
+    CONSTRAINT [FK_EmployeeInvestmentDetails_ToTable] FOREIGN KEY ([employee_id]) REFERENCES [Employee]([id])
+    
 );
 

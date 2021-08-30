@@ -107,5 +107,9 @@
     <Build Include="dbo\Stored Procedures\sp_DeleteOfficeLocationDetails.sql" />
     <Build Include="dbo\Stored Procedures\sp_GetOfficeLocationDetails.sql" />
     <Build Include="dbo\Stored Procedures\sp_GetOfficeLocationDetailsById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeAddressDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeAddressDetailsById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertEmployeeAddressDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeAddressDetails.sql" />
   </ItemGroup>
 </Project>

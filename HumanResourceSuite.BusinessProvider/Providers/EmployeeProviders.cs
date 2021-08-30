@@ -118,5 +118,84 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             return result;
         }
 
+        /// <summary>
+        /// Get Employee Address
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeAddressDTO> GetEmployeeAddress(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeAddressDTO> employeeAddressDTOs = null;
+            try
+            {
+                employeeAddressDTOs = _Employeerepository.GetEmployeeAddress(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeAddressDTOs;
+        }
+
+        /// <summary>
+        /// Get Employee Address by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeAddressDTO GetEmployeeAddressById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeAddressDTO employeeAddressDTO = null;
+            try
+            {
+                employeeAddressDTO = _Employeerepository.GetEmployeeAddressById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeAddressDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Address
+        /// </summary>
+        /// <param name="employeeaddressDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeAddressDTO InsertEmployeeAddress(EmployeeAddressDTO employeeaddressDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeaddressDTO = _Employeerepository.InsertEmployeeAddress(employeeaddressDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeaddressDTO;
+        }
+        /// <summary>
+        /// Update Employee Address
+        /// </summary>
+        /// <param name="employeeaddressDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeAddressDTO UpdateEmployeeAddress(EmployeeAddressDTO employeeaddressDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeaddressDTO = _Employeerepository.UpdateEmployeeAddress(employeeaddressDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeaddressDTO;
+        }
     }
 }

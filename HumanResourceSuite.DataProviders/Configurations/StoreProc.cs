@@ -24,5 +24,9 @@ namespace HumanResourceSuite.DataProviders.Configurations
         public const string SP_InsertEmployeeDetails = "sp_InsertEmployeeDetails";
         public const string SP_UpdateEmployeeDetails = "sp_UpdateEmployeeDetails";
         public const string SP_DeleteEmployeeDetails = "sp_DeleteEmployeeDetails";
+        public const string SP_GetEmployeeAddress = "sp_GetEmployeeAddressDetails";
+        public const string SP_GetEmployeeAddressbyId = "sp_GetEmployeeAddressDetailsById";
+        public const string SP_InsertEmployeeAddress = "sp_InsertEmployeeAddressDetails";
+        public const string SP_UpdateEmployeeAddress = "sp_UpdateEmployeeAddressDetails";
     }
 }

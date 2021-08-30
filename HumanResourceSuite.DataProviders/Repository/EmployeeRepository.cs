@@ -270,5 +270,180 @@ namespace HumanResourceSuite.DataProviders.Repository
             }
             return result;
         }
+        /// <summary>
+        /// Get Employee Address
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeAddressDTO> GetEmployeeAddress(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeAddressDTO> dataToReturn = new List<EmployeeAddressDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeAddress, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeAddressDTO data = new EmployeeAddressDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.address_line = GetStringValue(reader["address_line"]);
+                        data.city = GetIntegerValue(reader["city"]);
+                        data.country = GetIntegerValue(reader["country"]);
+                        data.state = GetIntegerValue(reader["state"]);
+                        data.type = GetIntegerValue(reader["type"]);
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employee Address By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeAddressDTO GetEmployeeAddressById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeAddressDTO data = new EmployeeAddressDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeAddressbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if(reader.Read())
+                    {                        
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.address_line = GetStringValue(reader["address_line"]);
+                        data.city = GetIntegerValue(reader["city"]);
+                        data.country = GetIntegerValue(reader["country"]);
+                        data.state = GetIntegerValue(reader["state"]);
+                        data.type = GetIntegerValue(reader["type"]);
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);                        
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employee Address
+        /// </summary>
+        /// <param name="employeeaddressDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeAddressDTO InsertEmployeeAddress(EmployeeAddressDTO employeeaddressDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeAddress, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@employee_id", employeeaddressDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeaddressDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@address_line", employeeaddressDTO.address_line);
+                    cmd.Parameters.AddWithValue("@city", employeeaddressDTO.city);
+                    cmd.Parameters.AddWithValue("@country", employeeaddressDTO.country);
+                    cmd.Parameters.AddWithValue("@state", employeeaddressDTO.state);
+                    cmd.Parameters.AddWithValue("@type", employeeaddressDTO.type);
+                    cmd.Parameters.AddWithValue("@created_by", employeeaddressDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeaddressDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeaddressDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Address
+        /// </summary>
+        /// <param name="employeeaddressDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeAddressDTO UpdateEmployeeAddress(EmployeeAddressDTO employeeaddressDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeAddress, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeaddressDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeaddressDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeaddressDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@address_line", employeeaddressDTO.address_line);
+                    cmd.Parameters.AddWithValue("@city", employeeaddressDTO.city);
+                    cmd.Parameters.AddWithValue("@country", employeeaddressDTO.country);
+                    cmd.Parameters.AddWithValue("@state", employeeaddressDTO.state);
+                    cmd.Parameters.AddWithValue("@type", employeeaddressDTO.type);
+                    cmd.Parameters.AddWithValue("@created_by", employeeaddressDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeaddressDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeaddressDTO;
+        }
     }
 }
