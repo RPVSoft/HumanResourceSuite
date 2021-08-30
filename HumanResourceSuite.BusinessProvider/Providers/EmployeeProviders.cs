@@ -197,5 +197,85 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             }
             return employeeaddressDTO;
         }
+
+        /// <summary>
+        /// Get Employee Bank Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeBankDetailsDTO> GetEmployeeBankDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeBankDetailsDTO> employeeBankDetailsDTO = null;
+            try
+            {
+                employeeBankDetailsDTO = _Employeerepository.GetEmployeeBankDetails(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeBankDetailsDTO;
+        }
+
+        /// <summary>
+        /// Get Employee Bank Details by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeBankDetailsDTO GetEmployeeEmployeeBankDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeBankDetailsDTO employeeBankDetailsDTO = null;
+            try
+            {
+                employeeBankDetailsDTO = _Employeerepository.GetEmployeeEmployeeBankDetailsById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeBankDetailsDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Bank Details
+        /// </summary>
+        /// <param name="employeeBankDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeBankDetailsDTO InsertEmployeeBankDetails(EmployeeBankDetailsDTO employeeBankDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeBankDetailsDTO = _Employeerepository.InsertEmployeeBankDetails(employeeBankDetailsDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeBankDetailsDTO;
+        }
+        /// <summary>
+        /// Update Employee Bank Details
+        /// </summary>
+        /// <param name="employeeBankDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeBankDetailsDTO UpdateEmployeeBankDetails(EmployeeBankDetailsDTO employeeBankDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeBankDetailsDTO = _Employeerepository.UpdateEmployeeBankDetails(employeeBankDetailsDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeBankDetailsDTO;
+        }
     }
 }

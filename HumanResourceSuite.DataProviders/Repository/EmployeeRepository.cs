@@ -445,5 +445,177 @@ namespace HumanResourceSuite.DataProviders.Repository
             }
             return employeeaddressDTO;
         }
+
+        /// <summary>
+        /// Get Employee Bank Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeBankDetailsDTO> GetEmployeeBankDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeBankDetailsDTO> dataToReturn = new List<EmployeeBankDetailsDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeBankDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeBankDetailsDTO data = new EmployeeBankDetailsDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.bank = GetStringValue(reader["bank"]);
+                        data.account_no = GetStringValue(reader["account_no"]);
+                        data.ifsc_code = GetStringValue(reader["ifsc_code"]);
+                        data.active = GetBitValue(reader["active"]);                        
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employee Bank Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeBankDetailsDTO GetEmployeeEmployeeBankDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeBankDetailsDTO data = new EmployeeBankDetailsDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeBankDetailsbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.bank = GetStringValue(reader["bank"]);
+                        data.account_no = GetStringValue(reader["account_no"]);
+                        data.ifsc_code = GetStringValue(reader["ifsc_code"]);
+                        data.active = GetBitValue(reader["active"]);
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employee Bank Details
+        /// </summary>
+        /// <param name="employeeBankDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeBankDetailsDTO InsertEmployeeBankDetails(EmployeeBankDetailsDTO employeeBankDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeBankDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@employee_id", employeeBankDetailsDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeBankDetailsDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@bank", employeeBankDetailsDTO.bank);
+                    cmd.Parameters.AddWithValue("@account_no", employeeBankDetailsDTO.account_no);
+                    cmd.Parameters.AddWithValue("@ifsc_code", employeeBankDetailsDTO.ifsc_code);
+                    cmd.Parameters.AddWithValue("@active", true);
+                    cmd.Parameters.AddWithValue("@created_by", employeeBankDetailsDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeBankDetailsDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeBankDetailsDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Bank Details
+        /// </summary>
+        /// <param name="employeeBankDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeBankDetailsDTO UpdateEmployeeBankDetails(EmployeeBankDetailsDTO employeeBankDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeBankDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeBankDetailsDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeBankDetailsDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeBankDetailsDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@bank", employeeBankDetailsDTO.bank);
+                    cmd.Parameters.AddWithValue("@account_no", employeeBankDetailsDTO.account_no);
+                    cmd.Parameters.AddWithValue("@ifsc_code", employeeBankDetailsDTO.ifsc_code);
+                    cmd.Parameters.AddWithValue("@active", employeeBankDetailsDTO.active);
+                    cmd.Parameters.AddWithValue("@created_by", employeeBankDetailsDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeBankDetailsDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeBankDetailsDTO;
+        }
     }
 }

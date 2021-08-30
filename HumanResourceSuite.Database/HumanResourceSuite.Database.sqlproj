@@ -111,5 +111,9 @@
     <Build Include="dbo\Stored Procedures\sp_GetEmployeeAddressDetailsById.sql" />
     <Build Include="dbo\Stored Procedures\sp_InsertEmployeeAddressDetails.sql" />
     <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeAddressDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeBankDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeBankDetailsById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertEmployeeBankDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeBankDetails.sql" />
   </ItemGroup>
 </Project>

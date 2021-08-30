@@ -2,7 +2,7 @@
     [id]            INT           IDENTITY (1, 1) NOT NULL,
     [employee_id]   INT           NOT NULL,
     [emp_code]      NCHAR (10)    NOT NULL,
-    [bank]          INT           NOT NULL,
+    [bank]          NVARCHAR (50) NOT NULL,
     [account_no]    NVARCHAR (50) NULL,
     [ifsc_code]     NCHAR (10)    NULL,
     [active]        BIT           NULL,

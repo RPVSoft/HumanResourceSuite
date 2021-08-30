@@ -262,5 +262,104 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
                 Response.StatusCode = StatusCodes.Status200OK;
             return new JsonResult(response);
         }
+
+        /// <summary>
+        /// Get Employee Bank Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetBankDetailsbyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeebankDetailsById(int id)
+        {
+            SingleResponseDTO<EmployeeBankDetailsDTO> response = new SingleResponseDTO<EmployeeBankDetailsDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployeeEmployeeBankDetailsById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employee Bank Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllBankDetails")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeBankDetails()
+        {
+            MultiResponseDTO<EmployeeBankDetailsDTO> response = new MultiResponseDTO<EmployeeBankDetailsDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployeeBankDetails(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employee Bank Details
+        /// </summary>
+        /// <param name="employeeBankDetailsDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertBankDetails")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployeeBankDetails([FromBody] EmployeeBankDetailsDTO employeeBankDetailsDTO)
+        {
+            SingleResponseDTO<EmployeeBankDetailsDTO> response = new SingleResponseDTO<EmployeeBankDetailsDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployeeBankDetails(employeeBankDetailsDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employee Bank Details
+        /// </summary>
+        /// <param name="employeeBankDetailsDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateBankDetails")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployeeBankDetails([FromBody] EmployeeBankDetailsDTO employeeBankDetailsDTO)
+        {
+            SingleResponseDTO<EmployeeBankDetailsDTO> response = new SingleResponseDTO<EmployeeBankDetailsDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployeeBankDetails(employeeBankDetailsDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
     }
 }
