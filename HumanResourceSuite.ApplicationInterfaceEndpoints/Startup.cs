@@ -48,6 +48,8 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints
             services.AddTransient<ILeadRepository, LeadRepository>();
             services.AddTransient<ICompanyProvider,CompanyProviders>();
             services.AddTransient<ICompanyRepository, CompanyRepository>();
+            services.AddTransient<IEmployeeProviders, EmployeeProviders>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             // Add Appsettings Options , Hence Appsettings can be passed to different layers
             services.Configure<Common.Framework.AppSettings>(Configuration.GetSection("ApplicationSettings"));
             services.AddOptions();

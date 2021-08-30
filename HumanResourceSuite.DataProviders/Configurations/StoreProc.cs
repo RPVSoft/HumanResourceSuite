@@ -19,6 +19,10 @@ namespace HumanResourceSuite.DataProviders.Configurations
         public const string SP_DeleteOfficeLocation = "sp_DeleteOfficeLocationDetails";
         public const string SP_GetOfficeLocation = "sp_GetOfficeLocationDetails";
         public const string SP_GetOfficeLocationById = "sp_GetOfficeLocationDetailsById";
-
+        public const string SP_GetEmployeeDetails = "sp_GetEmployeeDetails";
+        public const string SP_GetEmployeeDetailsbyId = "sp_GetEmployeeDetailsById";
+        public const string SP_InsertEmployeeDetails = "sp_InsertEmployeeDetails";
+        public const string SP_UpdateEmployeeDetails = "sp_UpdateEmployeeDetails";
+        public const string SP_DeleteEmployeeDetails = "sp_DeleteEmployeeDetails";
     }
 }

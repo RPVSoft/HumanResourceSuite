@@ -150,7 +150,7 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@company_size", companyDTO.company_size);
                     cmd.Parameters.AddWithValue("@founded_year", companyDTO.founded_year);
                     cmd.Parameters.AddWithValue("@verified", companyDTO.verified);
-                    cmd.Parameters.AddWithValue("@active", companyDTO.active);
+                    cmd.Parameters.AddWithValue("@active", true);
                     cmd.Parameters.AddWithValue("@primary_user_email", companyDTO.primary_user_email);
                     cmd.Parameters.AddWithValue("@primary_user_name", companyDTO.primary_user_name);
                     cmd.Parameters.AddWithValue("@created_by", companyDTO.created_by);
@@ -410,7 +410,7 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@Address_text", officeLocationDTO.Address_text);
                     cmd.Parameters.AddWithValue("@CityId", officeLocationDTO.CityId);
                     cmd.Parameters.AddWithValue("@CompanyId", officeLocationDTO.CompanyId);
-                    cmd.Parameters.AddWithValue("@Active", true);
+                    cmd.Parameters.AddWithValue("@Active", officeLocationDTO.Active);
                     cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.created_by);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.modified_by);

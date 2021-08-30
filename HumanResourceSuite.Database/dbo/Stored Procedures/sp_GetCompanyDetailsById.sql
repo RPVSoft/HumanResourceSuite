@@ -24,7 +24,13 @@ SELECT C.[id]
       ,[modified_by]
       ,[modified_date]
   FROM [dbo].[Companies] C
-JOIN [dbo].[Master] M
-ON C.[status]=M.id AND C.industry_type=M.id AND C.company_size=M.id
-WHERE C.id=@CompanyId ORDER BY C.id DESC
+JOIN [dbo].[Master] M1
+ON C.[status]=M1.id 
+JOIN [dbo].[Master] M2
+ON C.industry_type=M2.id
+JOIN [dbo].[Master] M3
+ON C.company_size=M3.id
+WHERE C.id=@CompanyId AND C.active=1
+ORDER BY C.id DESC
+
 END

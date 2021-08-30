@@ -8,29 +8,32 @@ BEGIN
 SET NOCOUNT ON;    
 
 SELECT E.[id]
-,[emp_code]
-,[photo_url]
-,[first_name]
-,[middle_name]
-,[last_name]
-,[gender]
-,[pan_number]
-,[marital_status]
-,[personal_email]
-,[work_email]
-,[work_phone]
-,[phone_ext]
-,[mobile_no]
-,[date_of_birth]
-,[vendor_id]
-,[active]
-,[deleted]
-,[created_by]
-,[created_date]
-,[modified_by]
-,[modified_date]
+,E.[emp_code]
+,E.[photo_url]
+,E.[first_name]
+,E.[middle_name]
+,E.[last_name]
+,E.[gender]
+,E.[pan_number]
+,E.[marital_status]
+,E.[personal_email]
+,E.[work_email]
+,E.[work_phone]
+,E.[phone_ext]
+,E.[mobile_no]
+,E.[date_of_birth]
+,E.[vendor_id]
+,E.[active]
+,E.[deleted]
+,E.[created_by]
+,E.[created_date]
+,E.[modified_by]
+,E.[modified_date]
 FROM [HumanResourceSuite].[dbo].[Employee] E
-JOIN [HumanResourceSuite].[dbo].[Master] M
-ON E.gender=M.id AND E.marital_status=M.id
-WHERE E.id=@EmployeeId ORDER BY E.id DESC
+JOIN [HumanResourceSuite].[dbo].[Master] M1
+ON E.gender=M1.id
+JOIN [HumanResourceSuite].[dbo].[Master] M2
+ON E.marital_status=M2.id
+WHERE E.id=@EmployeeId AND E.active=1
+ORDER BY E.id DESC
 END
