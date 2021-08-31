@@ -32,5 +32,9 @@ namespace HumanResourceSuite.DataProviders.Configurations
         public const string SP_GetEmployeeBankDetailsbyId = "sp_GetEmployeeBankDetailsById";
         public const string SP_InsertEmployeeBankDetails = "sp_InsertEmployeeBankDetails";
         public const string SP_UpdateEmployeeBankDetails = "sp_UpdateEmployeeBankDetails";
+        public const string SP_GetEmployeeInvestment = "sp_GetEmployeeInvesment";
+        public const string SP_GetEmployeeInvestmentbyId = "sp_GetEmployeeInvesmentById";
+        public const string SP_InsertEmployeeInvestment = "sp_InsertEmployeeInvesment";
+        public const string SP_UpdateEmployeeInvestment = "sp_UpdateEmployeeInvesment";
     }
 }

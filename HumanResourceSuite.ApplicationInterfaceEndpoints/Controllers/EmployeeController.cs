@@ -361,5 +361,104 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
                 Response.StatusCode = StatusCodes.Status200OK;
             return new JsonResult(response);
         }
+
+        /// <summary>
+        /// Get Employee Investment Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetInvestmentbyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeEmployeeInvestmentById(int id)
+        {
+            SingleResponseDTO<EmployeeInvestmentDTO> response = new SingleResponseDTO<EmployeeInvestmentDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployeeEmployeeInvestmentById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employee Investment Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllInvestment")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeInvestment()
+        {
+            MultiResponseDTO<EmployeeInvestmentDTO> response = new MultiResponseDTO<EmployeeInvestmentDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployeeInvestment(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employee Investment Details
+        /// </summary>
+        /// <param name="employeeInvestmentDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertInvestment")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployeeInvestment([FromBody] EmployeeInvestmentDTO employeeInvestmentDTO)
+        {
+            SingleResponseDTO<EmployeeInvestmentDTO> response = new SingleResponseDTO<EmployeeInvestmentDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployeeInvestment(employeeInvestmentDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employee Investment Details
+        /// </summary>
+        /// <param name="employeeInvestmentDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateInvestment")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployeeInvestment([FromBody] EmployeeInvestmentDTO employeeInvestmentDTO)
+        {
+            SingleResponseDTO<EmployeeInvestmentDTO> response = new SingleResponseDTO<EmployeeInvestmentDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployeeInvestment(employeeInvestmentDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
     }
 }

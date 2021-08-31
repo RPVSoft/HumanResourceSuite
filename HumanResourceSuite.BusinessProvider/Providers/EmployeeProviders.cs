@@ -277,5 +277,85 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             }
             return employeeBankDetailsDTO;
         }
+
+        /// <summary>
+        /// Get Employee Investment Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeInvestmentDTO> GetEmployeeInvestment(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeInvestmentDTO> employeeInvestmentDTO = null;
+            try
+            {
+                employeeInvestmentDTO = _Employeerepository.GetEmployeeInvestment(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeInvestmentDTO;
+        }
+
+        /// <summary>
+        /// Get Employee Investment Details by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeInvestmentDTO GetEmployeeEmployeeInvestmentById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeInvestmentDTO employeeInvestmentDTO = null;
+            try
+            {
+                employeeInvestmentDTO = _Employeerepository.GetEmployeeEmployeeInvestmentById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeInvestmentDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Investment Details
+        /// </summary>
+        /// <param name="employeeInvestmentDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeInvestmentDTO InsertEmployeeInvestment(EmployeeInvestmentDTO employeeInvestmentDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeInvestmentDTO = _Employeerepository.InsertEmployeeInvestment(employeeInvestmentDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeInvestmentDTO;
+        }
+        /// <summary>
+        /// Update Employee Investment Details
+        /// </summary>
+        /// <param name="employeeInvestmentDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeInvestmentDTO UpdateEmployeeInvestment(EmployeeInvestmentDTO employeeInvestmentDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeInvestmentDTO = _Employeerepository.UpdateEmployeeInvestment(employeeInvestmentDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeInvestmentDTO;
+        }
     }
 }

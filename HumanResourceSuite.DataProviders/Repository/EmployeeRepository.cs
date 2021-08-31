@@ -617,5 +617,241 @@ namespace HumanResourceSuite.DataProviders.Repository
             }
             return employeeBankDetailsDTO;
         }
+
+        /// <summary>
+        /// Get Employee Investment Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeInvestmentDTO> GetEmployeeInvestment(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeInvestmentDTO> dataToReturn = new List<EmployeeInvestmentDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeInvestment, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeInvestmentDTO data = new EmployeeInvestmentDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.financial_year = GetStringValue(reader["financial_year"]);
+                        data.house_rent_allowance = GetDecimalValue(reader["house_rent_allowance"]);
+                        data.life_insurance_premium = GetDecimalValue(reader["life_insurance_premium"]);                        
+                        data.provident_fund = GetDecimalValue(reader["provident_fund"]);
+                        data.public_provident_fund = GetDecimalValue(reader["public_provident_fund"]);
+                        data.voluntary_provident_fund = GetDecimalValue(reader["voluntary_provident_fund"]);
+                        data.nsc = GetDecimalValue(reader["nsc"]);
+                        data.interest_nsc = GetDecimalValue(reader["interest_nsc"]);
+                        data.ulip = GetDecimalValue(reader["ulip"]);
+                        data.elss_mutual_fund = GetDecimalValue(reader["elss_mutual_fund"]);
+                        data.tution_fees = GetDecimalValue(reader["tution_fees"]);
+                        data.principal_repayment_house_loan = GetDecimalValue(reader["principal_repayment_house_loan"]);
+                        data.house_stamp_duty_reg_charges = GetDecimalValue(reader["house_stamp_duty_reg_charges"]);
+                        data.infrastructure_bonds = GetDecimalValue(reader["infrastructure_bonds"]);
+                        data.bank_fixed_deposit = GetDecimalValue(reader["bank_fixed_deposit"]);
+                        data.post_office_term_deposit = GetDecimalValue(reader["post_office_term_deposit"]);
+                        data.medical_insurance_premium = GetDecimalValue(reader["medical_insurance_premium"]);
+                        data.medical_insurance_premuim_parents = GetDecimalValue(reader["medical_insurance_premuim_parents"]);
+                        data.preventive_health_checkup = GetDecimalValue(reader["preventive_health_checkup"]);
+                        data.home_loan_interest = GetDecimalValue(reader["home_loan_interest"]);                        
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employee Investment Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeInvestmentDTO GetEmployeeEmployeeInvestmentById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeInvestmentDTO data = new EmployeeInvestmentDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeInvestmentbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.financial_year = GetStringValue(reader["financial_year"]);
+                        data.house_rent_allowance = GetDecimalValue(reader["house_rent_allowance"]);
+                        data.life_insurance_premium = GetDecimalValue(reader["life_insurance_premium"]);
+                        data.provident_fund = GetDecimalValue(reader["provident_fund"]);
+                        data.public_provident_fund = GetDecimalValue(reader["public_provident_fund"]);
+                        data.voluntary_provident_fund = GetDecimalValue(reader["voluntary_provident_fund"]);
+                        data.nsc = GetDecimalValue(reader["nsc"]);
+                        data.interest_nsc = GetDecimalValue(reader["interest_nsc"]);
+                        data.ulip = GetDecimalValue(reader["ulip"]);
+                        data.elss_mutual_fund = GetDecimalValue(reader["elss_mutual_fund"]);
+                        data.tution_fees = GetDecimalValue(reader["tution_fees"]);
+                        data.principal_repayment_house_loan = GetDecimalValue(reader["principal_repayment_house_loan"]);
+                        data.house_stamp_duty_reg_charges = GetDecimalValue(reader["house_stamp_duty_reg_charges"]);
+                        data.infrastructure_bonds = GetDecimalValue(reader["infrastructure_bonds"]);
+                        data.bank_fixed_deposit = GetDecimalValue(reader["bank_fixed_deposit"]);
+                        data.post_office_term_deposit = GetDecimalValue(reader["post_office_term_deposit"]);
+                        data.medical_insurance_premium = GetDecimalValue(reader["medical_insurance_premium"]);
+                        data.medical_insurance_premuim_parents = GetDecimalValue(reader["medical_insurance_premuim_parents"]);
+                        data.preventive_health_checkup = GetDecimalValue(reader["preventive_health_checkup"]);
+                        data.home_loan_interest = GetDecimalValue(reader["home_loan_interest"]);
+                        data.created_by = GetStringValue(reader["created_by"]);
+                        data.created_date = GetDateTimeValue(reader["created_date"]);
+                        data.modified_by = GetStringValue(reader["modified_by"]);
+                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employee Investment Details
+        /// </summary>
+        /// <param name="employeeInvestmentDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeInvestmentDTO InsertEmployeeInvestment(EmployeeInvestmentDTO employeeInvestmentDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeInvestment, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@employee_id", employeeInvestmentDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeInvestmentDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@financial_year", employeeInvestmentDTO.financial_year);
+                    cmd.Parameters.AddWithValue("@house_rent_allowance", employeeInvestmentDTO.house_rent_allowance);
+                    cmd.Parameters.AddWithValue("@life_insurance_premium", employeeInvestmentDTO.life_insurance_premium);
+                    cmd.Parameters.AddWithValue("@provident_fund", employeeInvestmentDTO.provident_fund);
+                    cmd.Parameters.AddWithValue("@public_provident_fund", employeeInvestmentDTO.public_provident_fund);
+                    cmd.Parameters.AddWithValue("@voluntary_provident_fund", employeeInvestmentDTO.voluntary_provident_fund);
+                    cmd.Parameters.AddWithValue("@nsc", employeeInvestmentDTO.nsc);
+                    cmd.Parameters.AddWithValue("@interest_nsc", employeeInvestmentDTO.interest_nsc);
+                    cmd.Parameters.AddWithValue("@ulip", employeeInvestmentDTO.ulip);
+                    cmd.Parameters.AddWithValue("@elss_mutual_fund", employeeInvestmentDTO.elss_mutual_fund);
+                    cmd.Parameters.AddWithValue("@tution_fees", employeeInvestmentDTO.tution_fees);
+                    cmd.Parameters.AddWithValue("@principal_repayment_house_loan", employeeInvestmentDTO.principal_repayment_house_loan);
+                    cmd.Parameters.AddWithValue("@house_stamp_duty_reg_charges", employeeInvestmentDTO.house_stamp_duty_reg_charges);
+                    cmd.Parameters.AddWithValue("@infrastructure_bonds", employeeInvestmentDTO.infrastructure_bonds);
+                    cmd.Parameters.AddWithValue("@bank_fixed_deposit", employeeInvestmentDTO.bank_fixed_deposit);
+                    cmd.Parameters.AddWithValue("@post_office_term_deposit", employeeInvestmentDTO.post_office_term_deposit);
+                    cmd.Parameters.AddWithValue("@medical_insurance_premium", employeeInvestmentDTO.medical_insurance_premium);
+                    cmd.Parameters.AddWithValue("@medical_insurance_premuim_parents", employeeInvestmentDTO.medical_insurance_premuim_parents);
+                    cmd.Parameters.AddWithValue("@preventive_health_checkup", employeeInvestmentDTO.preventive_health_checkup);
+                    cmd.Parameters.AddWithValue("@home_loan_interest", employeeInvestmentDTO.home_loan_interest);                   
+                    cmd.Parameters.AddWithValue("@created_by", employeeInvestmentDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeInvestmentDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeInvestmentDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Investment Details
+        /// </summary>
+        /// <param name="employeeInvestmentDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeInvestmentDTO UpdateEmployeeInvestment(EmployeeInvestmentDTO employeeInvestmentDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeInvestment, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeInvestmentDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeInvestmentDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeInvestmentDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@financial_year", employeeInvestmentDTO.financial_year);
+                    cmd.Parameters.AddWithValue("@house_rent_allowance", employeeInvestmentDTO.house_rent_allowance);
+                    cmd.Parameters.AddWithValue("@life_insurance_premium", employeeInvestmentDTO.life_insurance_premium);
+                    cmd.Parameters.AddWithValue("@provident_fund", employeeInvestmentDTO.provident_fund);
+                    cmd.Parameters.AddWithValue("@public_provident_fund", employeeInvestmentDTO.public_provident_fund);
+                    cmd.Parameters.AddWithValue("@voluntary_provident_fund", employeeInvestmentDTO.voluntary_provident_fund);
+                    cmd.Parameters.AddWithValue("@nsc", employeeInvestmentDTO.nsc);
+                    cmd.Parameters.AddWithValue("@interest_nsc", employeeInvestmentDTO.interest_nsc);
+                    cmd.Parameters.AddWithValue("@ulip", employeeInvestmentDTO.ulip);
+                    cmd.Parameters.AddWithValue("@elss_mutual_fund", employeeInvestmentDTO.elss_mutual_fund);
+                    cmd.Parameters.AddWithValue("@tution_fees", employeeInvestmentDTO.tution_fees);
+                    cmd.Parameters.AddWithValue("@principal_repayment_house_loan", employeeInvestmentDTO.principal_repayment_house_loan);
+                    cmd.Parameters.AddWithValue("@house_stamp_duty_reg_charges", employeeInvestmentDTO.house_stamp_duty_reg_charges);
+                    cmd.Parameters.AddWithValue("@infrastructure_bonds", employeeInvestmentDTO.infrastructure_bonds);
+                    cmd.Parameters.AddWithValue("@bank_fixed_deposit", employeeInvestmentDTO.bank_fixed_deposit);
+                    cmd.Parameters.AddWithValue("@post_office_term_deposit", employeeInvestmentDTO.post_office_term_deposit);
+                    cmd.Parameters.AddWithValue("@medical_insurance_premium", employeeInvestmentDTO.medical_insurance_premium);
+                    cmd.Parameters.AddWithValue("@medical_insurance_premuim_parents", employeeInvestmentDTO.medical_insurance_premuim_parents);
+                    cmd.Parameters.AddWithValue("@preventive_health_checkup", employeeInvestmentDTO.preventive_health_checkup);
+                    cmd.Parameters.AddWithValue("@home_loan_interest", employeeInvestmentDTO.home_loan_interest);
+                    cmd.Parameters.AddWithValue("@created_by", employeeInvestmentDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeInvestmentDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeInvestmentDTO;
+        }
     }
 }

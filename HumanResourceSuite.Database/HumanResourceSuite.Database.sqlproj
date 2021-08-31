@@ -115,5 +115,9 @@
     <Build Include="dbo\Stored Procedures\sp_GetEmployeeBankDetailsById.sql" />
     <Build Include="dbo\Stored Procedures\sp_InsertEmployeeBankDetails.sql" />
     <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeBankDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeInvesment.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeInvesmentById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertEmployeeInvesment.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeInvesment.sql" />
   </ItemGroup>
 </Project>

@@ -81,5 +81,20 @@ namespace HumanResourceSuite.DataProviders.Configurations
             return _value;
         }
 
+        protected decimal GetDecimalValue(object value)
+        {
+            decimal _value = 0.0m;
+            if (value == DBNull.Value)
+            {
+                return 0.0m;
+            }
+            else
+            {
+                decimal.TryParse(Convert.ToString(value), out _value);
+            }
+
+            return _value;
+        }
+
     }
 }
