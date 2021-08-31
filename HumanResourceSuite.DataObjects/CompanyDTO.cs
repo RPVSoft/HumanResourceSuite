@@ -4,24 +4,21 @@ using System.Text;
 
 namespace HumanResourceSuite.DataObjects
 {
-    public class CompanyDTO
+    public class CompanyDTO : BaseDTO
     {
-        public int id { get; set; }
-        public string legal_name { get; set; }
-        public string website_url { get; set; }
-        public string logo_url { get; set; }
-        public int status { get; set; }
-        public string overview { get; set; }
-        public int industry_type { get; set; }
-        public int company_size { get; set; }
-        public string founded_year { get; set; }
-        public bool verified { get; set; }
-        public bool active { get; set; }
-        public string primary_user_email { get; set; }
-        public string primary_user_name { get; set; }
-        public string created_by { get; set; }
-        public DateTime created_date { get; set; }
-        public string modified_by { get; set; }
-        public DateTime modified_date { get; set; }
+        public int Id { get; set; }
+        public string Legal_Name { get; set; }
+        public string Website_Url { get; set; }
+        public string Logo_Url { get; set; }
+        public int Status { get; set; }
+        public string Overview { get; set; }
+        public int Industry_Type { get; set; }
+        public int Company_Size { get; set; }
+        public string Founded_Year { get; set; }
+        public bool Verified { get; set; }
+        public bool Active { get; set; }
+        public string Primary_User_Email { get; set; }
+        public string Primary_User_Name { get; set; }
+
     }
 }

@@ -4,19 +4,16 @@ using System.Text;
 
 namespace HumanResourceSuite.DataObjects
 {
-   public class EmployeeAddressDTO
+    public class EmployeeAddressDTO : BaseDTO
     {
-		public int id { get; set; }
-		public int employee_id { get; set; }
-		public string emp_code { get; set; }
-		public string address_line { get; set; }
-		public int city { get; set; }
-		public int state { get; set; }
-		public int country { get; set; }
-		public int type { get; set; }
-		public string created_by { get; set; }
-		public DateTime created_date { get; set; }
-		public string modified_by { get; set; }
-		public DateTime modified_date { get; set; }
-	}
+        public int Id { get; set; }
+        public int Employee_Id { get; set; }
+        public string Emp_Code { get; set; }
+        public string Address_Line { get; set; }
+        public int City { get; set; }
+        public int State { get; set; }
+        public int Country { get; set; }
+        public int Type { get; set; }
+
+    }
 }
