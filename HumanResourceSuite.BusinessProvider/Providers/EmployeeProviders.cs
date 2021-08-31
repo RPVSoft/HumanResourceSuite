@@ -357,5 +357,86 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             }
             return employeeInvestmentDTO;
         }
+
+        /// <summary>
+        /// Get Employee Leave Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeLeaveDTO> GetEmployeeLeaveDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeLeaveDTO> employeeLeaveDTO = null;
+            try
+            {
+                employeeLeaveDTO = _Employeerepository.GetEmployeeLeaveDetails(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeLeaveDTO;
+        }
+
+        /// <summary>
+        /// Get Employee Leave Details by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeLeaveDTO GetEmployeeLeaveDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeLeaveDTO employeeLeaveDTO = null;
+            try
+            {
+                employeeLeaveDTO = _Employeerepository.GetEmployeeLeaveDetailsById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeLeaveDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Leave Details
+        /// </summary>
+        /// <param name="employeeLeaveDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeLeaveDTO InsertEmployeeLeaveDetails(EmployeeLeaveDTO employeeLeaveDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeLeaveDTO = _Employeerepository.InsertEmployeeLeaveDetails(employeeLeaveDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeLeaveDTO;
+        }
+        /// <summary>
+        /// Update Employee Leave Details
+        /// </summary>
+        /// <param name="employeeLeaveDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeLeaveDTO UpdateEmployeeLeaveDetails(EmployeeLeaveDTO employeeLeaveDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeLeaveDTO = _Employeerepository.UpdateEmployeeLeaveDetails(employeeLeaveDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeLeaveDTO;
+        }
+
     }
 }

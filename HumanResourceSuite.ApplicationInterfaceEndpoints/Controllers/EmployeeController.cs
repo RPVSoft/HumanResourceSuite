@@ -460,5 +460,105 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
                 Response.StatusCode = StatusCodes.Status200OK;
             return new JsonResult(response);
         }
+
+        /// <summary>
+        /// Get Employee Leave Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetLeaveDetailsbyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeLeaveDetailsById(int id)
+        {
+            SingleResponseDTO<EmployeeLeaveDTO> response = new SingleResponseDTO<EmployeeLeaveDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployeeLeaveDetailsById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employee Leave Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllLeaveDetails")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeLeaveDetails()
+        {
+            MultiResponseDTO<EmployeeLeaveDTO> response = new MultiResponseDTO<EmployeeLeaveDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployeeLeaveDetails(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employee Leave Details
+        /// </summary>
+        /// <param name="employeeLeaveDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertLeaveDetails")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployeeLeaveDetails([FromBody] EmployeeLeaveDTO employeeLeaveDTO)
+        {
+            SingleResponseDTO<EmployeeLeaveDTO> response = new SingleResponseDTO<EmployeeLeaveDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployeeLeaveDetails(employeeLeaveDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employee Leave Details
+        /// </summary>
+        /// <param name="employeeLeaveDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateLeaveDetails")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployeeLeaveDetails([FromBody] EmployeeLeaveDTO employeeLeaveDTO)
+        {
+            SingleResponseDTO<EmployeeLeaveDTO> response = new SingleResponseDTO<EmployeeLeaveDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployeeLeaveDetails(employeeLeaveDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
     }
 }

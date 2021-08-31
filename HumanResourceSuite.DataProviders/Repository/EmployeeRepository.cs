@@ -853,5 +853,182 @@ namespace HumanResourceSuite.DataProviders.Repository
             }
             return employeeInvestmentDTO;
         }
+
+        /// <summary>
+        /// Get Employee Leave Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeLeaveDTO> GetEmployeeLeaveDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeLeaveDTO> dataToReturn = new List<EmployeeLeaveDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeLeaveDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeLeaveDTO data = new EmployeeLeaveDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.leave_type = GetIntegerValue(reader["leave_type"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.reason = GetStringValue(reader["reason"]);
+                        data.status = GetIntegerValue(reader["status"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employee Leave Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeLeaveDTO GetEmployeeLeaveDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeLeaveDTO data = new EmployeeLeaveDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeLeaveDetailsbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.leave_type = GetIntegerValue(reader["leave_type"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.reason = GetStringValue(reader["reason"]);
+                        data.status = GetIntegerValue(reader["status"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employee Leave Details
+        /// </summary>
+        /// <param name="employeeLeaveDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeLeaveDTO InsertEmployeeLeaveDetails(EmployeeLeaveDTO employeeLeaveDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeLeaveDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@leave_type", employeeLeaveDTO.leave_type);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeLeaveDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeLeaveDTO.emp_code);                    
+                    cmd.Parameters.AddWithValue("@from_date", employeeLeaveDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employeeLeaveDTO.to_date);
+                    cmd.Parameters.AddWithValue("@reason", employeeLeaveDTO.reason);
+                    cmd.Parameters.AddWithValue("@status", employeeLeaveDTO.status);
+                    cmd.Parameters.AddWithValue("@created_by", employeeLeaveDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeLeaveDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeLeaveDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Leave Details
+        /// </summary>
+        /// <param name="employeeLeaveDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeLeaveDTO UpdateEmployeeLeaveDetails(EmployeeLeaveDTO employeeLeaveDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeLeaveDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeLeaveDTO.id);
+                    cmd.Parameters.AddWithValue("@leave_type", employeeLeaveDTO.leave_type);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeLeaveDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeLeaveDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@from_date", employeeLeaveDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employeeLeaveDTO.to_date);
+                    cmd.Parameters.AddWithValue("@reason", employeeLeaveDTO.reason);
+                    cmd.Parameters.AddWithValue("@status", employeeLeaveDTO.status);
+                    cmd.Parameters.AddWithValue("@created_by", employeeLeaveDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeLeaveDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeLeaveDTO;
+        }
+
     }
 }
