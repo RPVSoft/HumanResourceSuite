@@ -282,10 +282,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.CityId = GetIntegerValue(reader["CityId"]);
                         data.CompanyId = GetIntegerValue(reader["CompanyId"]);
                         data.Active = GetBitValue(reader["Active"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                         dataToReturn.Add(data);
                     }
                 }
@@ -329,10 +329,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.CityId = GetIntegerValue(reader["CityId"]);
                         data.CompanyId = GetIntegerValue(reader["CompanyId"]);
                         data.Active = GetBitValue(reader["Active"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);                        
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);                        
                     }
                 }
             }
@@ -369,9 +369,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@CityId", officeLocationDTO.CityId);
                     cmd.Parameters.AddWithValue("@CompanyId", officeLocationDTO.CompanyId);
                     cmd.Parameters.AddWithValue("@Active", true);                    
-                    cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
@@ -411,9 +411,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@CityId", officeLocationDTO.CityId);
                     cmd.Parameters.AddWithValue("@CompanyId", officeLocationDTO.CompanyId);
                     cmd.Parameters.AddWithValue("@Active", officeLocationDTO.Active);
-                    cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", officeLocationDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", officeLocationDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();

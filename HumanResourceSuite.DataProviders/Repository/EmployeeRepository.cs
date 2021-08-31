@@ -61,10 +61,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.vendor_id = GetIntegerValue(reader["vendor_id"]);
                         data.active = GetBitValue(reader["active"]);
                         data.deleted = GetBitValue(reader["deleted"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                         dataToReturn.Add(data);
                     }
                 }
@@ -119,10 +119,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.vendor_id = GetIntegerValue(reader["vendor_id"]);
                         data.active = GetBitValue(reader["active"]);
                         data.deleted = GetBitValue(reader["deleted"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                     }
                 }
             }
@@ -168,9 +168,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@vendor_id", employeeDTO.vendor_id);
                     cmd.Parameters.AddWithValue("@active", true);
                     cmd.Parameters.AddWithValue("@deleted", employeeDTO.deleted);
-                    cmd.Parameters.AddWithValue("@created_by", employeeDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", employeeDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
@@ -220,9 +220,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@vendor_id", employeeDTO.vendor_id);
                     cmd.Parameters.AddWithValue("@active", true);
                     cmd.Parameters.AddWithValue("@deleted", employeeDTO.deleted);
-                    cmd.Parameters.AddWithValue("@created_by", employeeDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", employeeDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
@@ -477,10 +477,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.account_no = GetStringValue(reader["account_no"]);
                         data.ifsc_code = GetStringValue(reader["ifsc_code"]);
                         data.active = GetBitValue(reader["active"]);                        
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                         dataToReturn.Add(data);
                     }
                 }
@@ -524,10 +524,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.account_no = GetStringValue(reader["account_no"]);
                         data.ifsc_code = GetStringValue(reader["ifsc_code"]);
                         data.active = GetBitValue(reader["active"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                     }
                 }
             }
@@ -562,9 +562,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@account_no", employeeBankDetailsDTO.account_no);
                     cmd.Parameters.AddWithValue("@ifsc_code", employeeBankDetailsDTO.ifsc_code);
                     cmd.Parameters.AddWithValue("@active", true);
-                    cmd.Parameters.AddWithValue("@created_by", employeeBankDetailsDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", employeeBankDetailsDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeBankDetailsDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeBankDetailsDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
@@ -603,9 +603,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@account_no", employeeBankDetailsDTO.account_no);
                     cmd.Parameters.AddWithValue("@ifsc_code", employeeBankDetailsDTO.ifsc_code);
                     cmd.Parameters.AddWithValue("@active", employeeBankDetailsDTO.active);
-                    cmd.Parameters.AddWithValue("@created_by", employeeBankDetailsDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", employeeBankDetailsDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeBankDetailsDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeBankDetailsDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
@@ -665,10 +665,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.medical_insurance_premuim_parents = GetDecimalValue(reader["medical_insurance_premuim_parents"]);
                         data.preventive_health_checkup = GetDecimalValue(reader["preventive_health_checkup"]);
                         data.home_loan_interest = GetDecimalValue(reader["home_loan_interest"]);                        
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                         dataToReturn.Add(data);
                     }
                 }
@@ -728,10 +728,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.medical_insurance_premuim_parents = GetDecimalValue(reader["medical_insurance_premuim_parents"]);
                         data.preventive_health_checkup = GetDecimalValue(reader["preventive_health_checkup"]);
                         data.home_loan_interest = GetDecimalValue(reader["home_loan_interest"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                     }
                 }
             }
@@ -782,9 +782,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@medical_insurance_premuim_parents", employeeInvestmentDTO.medical_insurance_premuim_parents);
                     cmd.Parameters.AddWithValue("@preventive_health_checkup", employeeInvestmentDTO.preventive_health_checkup);
                     cmd.Parameters.AddWithValue("@home_loan_interest", employeeInvestmentDTO.home_loan_interest);                   
-                    cmd.Parameters.AddWithValue("@created_by", employeeInvestmentDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", employeeInvestmentDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeInvestmentDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeInvestmentDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
@@ -839,9 +839,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@medical_insurance_premuim_parents", employeeInvestmentDTO.medical_insurance_premuim_parents);
                     cmd.Parameters.AddWithValue("@preventive_health_checkup", employeeInvestmentDTO.preventive_health_checkup);
                     cmd.Parameters.AddWithValue("@home_loan_interest", employeeInvestmentDTO.home_loan_interest);
-                    cmd.Parameters.AddWithValue("@created_by", employeeInvestmentDTO.created_by);
+                    cmd.Parameters.AddWithValue("@created_by", employeeInvestmentDTO.Created_By);
                     cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeInvestmentDTO.modified_by);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeInvestmentDTO.Modified_By);
                     cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();

@@ -51,10 +51,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.Email_address = GetStringValue(reader["email_address"]);
                         data.Company = GetStringValue(reader["company"]);
                         data.Industry_type = GetIntegerValue(reader["industry_type"]);
-                        data.Created_by = GetStringValue(reader["created_by"]);
-                        data.Created_date = GetDateTimeValue(reader["created_date"]);
-                        data.Modified_by = GetStringValue(reader["modified_by"]);
-                        data.Modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                         dataToReturn.Add(data);
                     }
                 }
@@ -98,10 +98,10 @@ namespace HumanResourceSuite.DataProviders.Repository
                         data.Email_address = GetStringValue(reader["email_address"]);
                         data.Company = GetStringValue(reader["company"]);
                         data.Industry_type = GetIntegerValue(reader["industry_type"]);
-                        data.Created_by = GetStringValue(reader["created_by"]);
-                        data.Created_date = GetDateTimeValue(reader["created_date"]);
-                        data.Modified_by = GetStringValue(reader["modified_by"]);
-                        data.Modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                     }
                 }
             }
@@ -138,9 +138,9 @@ namespace HumanResourceSuite.DataProviders.Repository
                     cmd.Parameters.AddWithValue("@EmailAddress", leads.Email_address);
                     cmd.Parameters.AddWithValue("@Company", leads.Company);
                     cmd.Parameters.AddWithValue("@IndustryType", leads.Industry_type);
-                    cmd.Parameters.AddWithValue("@CreatedBy", leads.Created_by);
+                    cmd.Parameters.AddWithValue("@CreatedBy", leads.Created_By);
                     cmd.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@UpdatedBy", leads.Modified_by);
+                    cmd.Parameters.AddWithValue("@UpdatedBy", leads.Modified_By);
                     cmd.Parameters.AddWithValue("@UpdatedDate", DateTime.Now);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
