@@ -294,18 +294,18 @@ namespace HumanResourceSuite.DataProviders.Repository
                     while (reader.Read())
                     {
                         EmployeeAddressDTO data = new EmployeeAddressDTO();
-                        data.id = GetIntegerValue(reader["id"]);
-                        data.employee_id = GetIntegerValue(reader["employee_id"]);
-                        data.emp_code = GetStringValue(reader["emp_code"]);
-                        data.address_line = GetStringValue(reader["address_line"]);
-                        data.city = GetIntegerValue(reader["city"]);
-                        data.country = GetIntegerValue(reader["country"]);
-                        data.state = GetIntegerValue(reader["state"]);
-                        data.type = GetIntegerValue(reader["type"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);
+                        data.Id = GetIntegerValue(reader["id"]);
+                        data.Employee_Id = GetIntegerValue(reader["employee_id"]);
+                        data.Emp_Code = GetStringValue(reader["emp_code"]);
+                        data.Address_Line = GetStringValue(reader["address_line"]);
+                        data.City = GetIntegerValue(reader["city"]);
+                        data.Country = GetIntegerValue(reader["country"]);
+                        data.State = GetIntegerValue(reader["state"]);
+                        data.Type = GetIntegerValue(reader["type"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
                         dataToReturn.Add(data);
                     }
                 }
@@ -342,18 +342,18 @@ namespace HumanResourceSuite.DataProviders.Repository
                     SqlDataReader reader = cmd.ExecuteReader();
                     if(reader.Read())
                     {                        
-                        data.id = GetIntegerValue(reader["id"]);
-                        data.employee_id = GetIntegerValue(reader["employee_id"]);
-                        data.emp_code = GetStringValue(reader["emp_code"]);
-                        data.address_line = GetStringValue(reader["address_line"]);
-                        data.city = GetIntegerValue(reader["city"]);
-                        data.country = GetIntegerValue(reader["country"]);
-                        data.state = GetIntegerValue(reader["state"]);
-                        data.type = GetIntegerValue(reader["type"]);
-                        data.created_by = GetStringValue(reader["created_by"]);
-                        data.created_date = GetDateTimeValue(reader["created_date"]);
-                        data.modified_by = GetStringValue(reader["modified_by"]);
-                        data.modified_date = GetDateTimeValue(reader["modified_date"]);                        
+                        data.Id = GetIntegerValue(reader["id"]);
+                        data.Employee_Id = GetIntegerValue(reader["employee_id"]);
+                        data.Emp_Code = GetStringValue(reader["emp_code"]);
+                        data.Address_Line = GetStringValue(reader["address_line"]);
+                        data.City = GetIntegerValue(reader["city"]);
+                        data.Country = GetIntegerValue(reader["country"]);
+                        data.State = GetIntegerValue(reader["state"]);
+                        data.Type = GetIntegerValue(reader["type"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);                        
                     }
                 }
             }
@@ -382,17 +382,17 @@ namespace HumanResourceSuite.DataProviders.Repository
                     {
                         CommandType = CommandType.StoredProcedure
                     };
-                    cmd.Parameters.AddWithValue("@employee_id", employeeaddressDTO.employee_id);
-                    cmd.Parameters.AddWithValue("@emp_code", employeeaddressDTO.emp_code);
-                    cmd.Parameters.AddWithValue("@address_line", employeeaddressDTO.address_line);
-                    cmd.Parameters.AddWithValue("@city", employeeaddressDTO.city);
-                    cmd.Parameters.AddWithValue("@country", employeeaddressDTO.country);
-                    cmd.Parameters.AddWithValue("@state", employeeaddressDTO.state);
-                    cmd.Parameters.AddWithValue("@type", employeeaddressDTO.type);
-                    cmd.Parameters.AddWithValue("@created_by", employeeaddressDTO.created_by);
-                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeaddressDTO.modified_by);
-                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeaddressDTO.Employee_Id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeaddressDTO.Emp_Code);
+                    cmd.Parameters.AddWithValue("@address_line", employeeaddressDTO.Address_Line);
+                    cmd.Parameters.AddWithValue("@city", employeeaddressDTO.City);
+                    cmd.Parameters.AddWithValue("@country", employeeaddressDTO.Country);
+                    cmd.Parameters.AddWithValue("@state", employeeaddressDTO.State);
+                    cmd.Parameters.AddWithValue("@type", employeeaddressDTO.Type);
+                    cmd.Parameters.AddWithValue("@created_by", employeeaddressDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.UtcNow);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeaddressDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.UtcNow);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -423,18 +423,18 @@ namespace HumanResourceSuite.DataProviders.Repository
                     {
                         CommandType = CommandType.StoredProcedure
                     };
-                    cmd.Parameters.AddWithValue("@id", employeeaddressDTO.id);
-                    cmd.Parameters.AddWithValue("@employee_id", employeeaddressDTO.employee_id);
-                    cmd.Parameters.AddWithValue("@emp_code", employeeaddressDTO.emp_code);
-                    cmd.Parameters.AddWithValue("@address_line", employeeaddressDTO.address_line);
-                    cmd.Parameters.AddWithValue("@city", employeeaddressDTO.city);
-                    cmd.Parameters.AddWithValue("@country", employeeaddressDTO.country);
-                    cmd.Parameters.AddWithValue("@state", employeeaddressDTO.state);
-                    cmd.Parameters.AddWithValue("@type", employeeaddressDTO.type);
-                    cmd.Parameters.AddWithValue("@created_by", employeeaddressDTO.created_by);
-                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@modified_by", employeeaddressDTO.modified_by);
-                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@id", employeeaddressDTO.Id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeaddressDTO.Employee_Id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeaddressDTO.Emp_Code);
+                    cmd.Parameters.AddWithValue("@address_line", employeeaddressDTO.Address_Line);
+                    cmd.Parameters.AddWithValue("@city", employeeaddressDTO.City);
+                    cmd.Parameters.AddWithValue("@country", employeeaddressDTO.Country);
+                    cmd.Parameters.AddWithValue("@state", employeeaddressDTO.State);
+                    cmd.Parameters.AddWithValue("@type", employeeaddressDTO.Type);
+                    cmd.Parameters.AddWithValue("@created_by", employeeaddressDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.UtcNow);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeaddressDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.UtcNow);
                     dbConn.Open();
                     cmd.ExecuteNonQuery();
                 }
