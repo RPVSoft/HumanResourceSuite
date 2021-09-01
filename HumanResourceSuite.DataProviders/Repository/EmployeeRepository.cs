@@ -1030,5 +1030,185 @@ namespace HumanResourceSuite.DataProviders.Repository
             return employeeLeaveDTO;
         }
 
+        /// <summary>
+        /// Get Employee Qualification Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeQualificationDTO> GetEmployeeQualification(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeQualificationDTO> dataToReturn = new List<EmployeeQualificationDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeQualification, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeQualificationDTO data = new EmployeeQualificationDTO();
+                        data.id = GetIntegerValue(reader["id"]);                        
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.qualification_level = GetIntegerValue(reader["qualification_level"]);
+                        data.course = GetIntegerValue(reader["course"]);
+                        data.course_ot = GetStringValue(reader["course_ot"]);
+                        data.school_university = GetStringValue(reader["school_university"]);
+                        data.marks_percentage = GetDecimalValue(reader["marks_percentage"]);
+                        data.verified = GetBitValue(reader["verified"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employee Qualification Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeQualificationDTO GetEmployeeQualificationById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeQualificationDTO data = new EmployeeQualificationDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeQualificationbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.qualification_level = GetIntegerValue(reader["qualification_level"]);
+                        data.course = GetIntegerValue(reader["course"]);
+                        data.course_ot = GetStringValue(reader["course_ot"]);
+                        data.school_university = GetStringValue(reader["school_university"]);
+                        data.marks_percentage = GetDecimalValue(reader["marks_percentage"]);
+                        data.verified = GetBitValue(reader["verified"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employee Qualification Details
+        /// </summary>
+        /// <param name="employeeQualificationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeQualificationDTO InsertEmployeeQualification(EmployeeQualificationDTO employeeQualificationDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeQualification, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };                    
+                    cmd.Parameters.AddWithValue("@employee_id", employeeQualificationDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeQualificationDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@qualification_level", employeeQualificationDTO.qualification_level);
+                    cmd.Parameters.AddWithValue("@course", employeeQualificationDTO.course);
+                    cmd.Parameters.AddWithValue("@course_ot", employeeQualificationDTO.course_ot);
+                    cmd.Parameters.AddWithValue("@school_university", employeeQualificationDTO.school_university);
+                    cmd.Parameters.AddWithValue("@marks_percentage", employeeQualificationDTO.marks_percentage);
+                    cmd.Parameters.AddWithValue("@verified", employeeQualificationDTO.verified);
+                    cmd.Parameters.AddWithValue("@created_by", employeeQualificationDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeQualificationDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeQualificationDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Qualification Details
+        /// </summary>
+        /// <param name="employeeQualificationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeQualificationDTO UpdateEmployeeQualification(EmployeeQualificationDTO employeeQualificationDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeQualification, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeQualificationDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeQualificationDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeQualificationDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@qualification_level", employeeQualificationDTO.qualification_level);
+                    cmd.Parameters.AddWithValue("@course", employeeQualificationDTO.course);
+                    cmd.Parameters.AddWithValue("@course_ot", employeeQualificationDTO.course_ot);
+                    cmd.Parameters.AddWithValue("@school_university", employeeQualificationDTO.school_university);
+                    cmd.Parameters.AddWithValue("@marks_percentage", employeeQualificationDTO.marks_percentage);
+                    cmd.Parameters.AddWithValue("@verified", employeeQualificationDTO.verified);
+                    cmd.Parameters.AddWithValue("@created_by", employeeQualificationDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeQualificationDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeQualificationDTO;
+        }
+
     }
 }

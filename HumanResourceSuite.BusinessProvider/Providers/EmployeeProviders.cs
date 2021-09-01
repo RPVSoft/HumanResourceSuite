@@ -438,5 +438,85 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             return employeeLeaveDTO;
         }
 
+        /// <summary>
+        /// Get Employee Qualification Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeQualificationDTO> GetEmployeeQualification(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeQualificationDTO> employeeQualificationDTO = null;
+            try
+            {
+                employeeQualificationDTO = _Employeerepository.GetEmployeeQualification(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeQualificationDTO;
+        }
+
+        /// <summary>
+        /// Get Employee Qualification Details by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeQualificationDTO GetEmployeeQualificationById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeQualificationDTO employeeQualificationDTO = null;
+            try
+            {
+                employeeQualificationDTO = _Employeerepository.GetEmployeeQualificationById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeQualificationDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Qualification Details
+        /// </summary>
+        /// <param name="employeeQualificationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeQualificationDTO InsertEmployeeQualification(EmployeeQualificationDTO employeeQualificationDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeQualificationDTO = _Employeerepository.InsertEmployeeQualification(employeeQualificationDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeQualificationDTO;
+        }
+        /// <summary>
+        /// Update Employee Qualification Details
+        /// </summary>
+        /// <param name="employeeQualificationDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeQualificationDTO UpdateEmployeeQualification(EmployeeQualificationDTO employeeQualificationDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeQualificationDTO = _Employeerepository.UpdateEmployeeQualification(employeeQualificationDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeQualificationDTO;
+        }
+
     }
 }

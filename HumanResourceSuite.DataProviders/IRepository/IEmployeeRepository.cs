@@ -27,18 +27,22 @@ namespace HumanResourceSuite.DataProviders.IRepository
         public EmployeeBankDetailsDTO UpdateEmployeeBankDetails(EmployeeBankDetailsDTO employeeBankDetailsDTO, AppSettings settings, out Exception ex);
 
         // Employee Investment
-
         public List<EmployeeInvestmentDTO> GetEmployeeInvestment(AppSettings settings, out Exception ex);
         public EmployeeInvestmentDTO GetEmployeeEmployeeInvestmentById(int id, AppSettings settings, out Exception ex);
         public EmployeeInvestmentDTO InsertEmployeeInvestment(EmployeeInvestmentDTO employeeInvestmentDTO, AppSettings settings, out Exception ex);
         public EmployeeInvestmentDTO UpdateEmployeeInvestment(EmployeeInvestmentDTO employeeInvestmentDTO, AppSettings settings, out Exception ex);
 
         // Employee Leave
-
         public List<EmployeeLeaveDTO> GetEmployeeLeaveDetails(AppSettings settings, out Exception ex);
         public EmployeeLeaveDTO GetEmployeeLeaveDetailsById(int id, AppSettings settings, out Exception ex);
         public EmployeeLeaveDTO InsertEmployeeLeaveDetails(EmployeeLeaveDTO employeeLeaveDTO, AppSettings settings, out Exception ex);
         public EmployeeLeaveDTO UpdateEmployeeLeaveDetails(EmployeeLeaveDTO employeeLeaveDTO, AppSettings settings, out Exception ex);
+
+        // Employee Qualification
+        public List<EmployeeQualificationDTO> GetEmployeeQualification(AppSettings settings, out Exception ex);
+        public EmployeeQualificationDTO GetEmployeeQualificationById(int id, AppSettings settings, out Exception ex);
+        public EmployeeQualificationDTO InsertEmployeeQualification(EmployeeQualificationDTO employeeQualificationDTO, AppSettings settings, out Exception ex);
+        public EmployeeQualificationDTO UpdateEmployeeQualification(EmployeeQualificationDTO employeeQualificationDTO, AppSettings settings, out Exception ex);
 
     }
 }

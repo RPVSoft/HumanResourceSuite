@@ -39,6 +39,10 @@ namespace HumanResourceSuite.DataProviders.Configurations
         public const string SP_GetEmployeeLeaveDetails = "sp_GetEmployeeLeaveDetails";
         public const string SP_GetEmployeeLeaveDetailsbyId = "sp_GetEmployeeLeaveDetailsById";
         public const string SP_InsertEmployeeLeaveDetails = "sp_InsertEmployeeLeaveDetails";
-        public const string SP_UpdateEmployeeLeaveDetails = "sp_UpdateEmployeeLeaveDetails";        
+        public const string SP_UpdateEmployeeLeaveDetails = "sp_UpdateEmployeeLeaveDetails";
+        public const string SP_GetEmployeeQualification = "sp_GetEmployeeQualification";
+        public const string SP_GetEmployeeQualificationbyId = "sp_GetEmployeeQualificationById";
+        public const string SP_InsertEmployeeQualification = "sp_InsertEmployeeQualification";
+        public const string SP_UpdateEmployeeQualification = "sp_UpdateEmployeeQualification";
     }
 }

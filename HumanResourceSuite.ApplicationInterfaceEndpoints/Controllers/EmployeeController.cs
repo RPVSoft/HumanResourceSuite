@@ -560,5 +560,103 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
             return new JsonResult(response);
         }
 
+        /// <summary>
+        /// Get Employee Qualification Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetQualificationbyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeQualificationById(int id)
+        {
+            SingleResponseDTO<EmployeeQualificationDTO> response = new SingleResponseDTO<EmployeeQualificationDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployeeQualificationById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employee Leave Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllQualificationDetails")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeQualification()
+        {
+            MultiResponseDTO<EmployeeQualificationDTO> response = new MultiResponseDTO<EmployeeQualificationDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployeeQualification(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employee Qualification Details
+        /// </summary>
+        /// <param name="employeeQualificationDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertQualificationDetails")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployeeQualification([FromBody] EmployeeQualificationDTO employeeQualificationDTO)
+        {
+            SingleResponseDTO<EmployeeQualificationDTO> response = new SingleResponseDTO<EmployeeQualificationDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployeeQualification(employeeQualificationDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employee Leave Details
+        /// </summary>
+        /// <param name="employeeQualificationDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateQualificationDetails")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployeeQualification([FromBody] EmployeeQualificationDTO employeeQualificationDTO)
+        {
+            SingleResponseDTO<EmployeeQualificationDTO> response = new SingleResponseDTO<EmployeeQualificationDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployeeQualification(employeeQualificationDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
     }
 }
