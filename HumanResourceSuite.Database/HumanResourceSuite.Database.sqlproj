@@ -127,5 +127,9 @@
     <Build Include="dbo\Stored Procedures\sp_GetEmployeeQualificationById.sql" />
     <Build Include="dbo\Stored Procedures\sp_InsertEmployeeQualification.sql" />
     <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeQualification.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeSalaryDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployeeSalaryDetailsById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertEmployeeSalaryDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateEmployeeSalaryDetails.sql" />
   </ItemGroup>
 </Project>

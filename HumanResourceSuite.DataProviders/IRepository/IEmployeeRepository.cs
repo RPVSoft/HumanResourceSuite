@@ -49,5 +49,12 @@ namespace HumanResourceSuite.DataProviders.IRepository
         public EmployeeSalaryDetailsDTO GetEmployeeSalaryDetailsById(int id, AppSettings settings, out Exception ex);
         public EmployeeSalaryDetailsDTO InsertEmployeeSalaryDetails(EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO, AppSettings settings, out Exception ex);
         public EmployeeSalaryDetailsDTO UpdateEmployeeSalaryDetails(EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO, AppSettings settings, out Exception ex);
+
+        // Employee Tenure
+        public List<EmployeeTenureDTO> GetEmployeeTenureDetails(AppSettings settings, out Exception ex);
+        public EmployeeTenureDTO GetEmployeeTenureDetailsById(int id, AppSettings settings, out Exception ex);
+        public EmployeeTenureDTO InsertEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex);
+        public EmployeeTenureDTO UpdateEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex);
+
     }
 }

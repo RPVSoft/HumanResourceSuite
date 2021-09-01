@@ -1304,7 +1304,7 @@ namespace HumanResourceSuite.DataProviders.Repository
             return data;
         }
         /// <summary>
-        /// Insert Salary Bank Details
+        /// Insert Employee Salary Details
         /// </summary>
         /// <param name="employeeSalaryDetailsDTO"></param>
         /// <param name="settings"></param>
@@ -1386,6 +1386,188 @@ namespace HumanResourceSuite.DataProviders.Repository
             return employeeSalaryDetailsDTO;
         }
 
+        /// <summary>
+        /// Get Employee Tenure Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeTenureDTO> GetEmployeeTenureDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeTenureDTO> dataToReturn = new List<EmployeeTenureDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeTenureDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeTenureDTO data = new EmployeeTenureDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);                        
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.reporting_manager = GetIntegerValue(reader["reporting_manager"]);
+                        data.department = GetIntegerValue(reader["department"]);
+                        data.designation = GetIntegerValue(reader["designation"]);
+                        data.role = GetIntegerValue(reader["role"]);
+                        data.active = GetBitValue(reader["active"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
 
+        /// <summary>
+        /// Get Employee Tenure Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeTenureDTO GetEmployeeTenureDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeTenureDTO data = new EmployeeTenureDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeTenureDetailsbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.reporting_manager = GetIntegerValue(reader["reporting_manager"]);
+                        data.department = GetIntegerValue(reader["department"]);
+                        data.designation = GetIntegerValue(reader["designation"]);
+                        data.role = GetIntegerValue(reader["role"]);
+                        data.active = GetBitValue(reader["active"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employee Tenure Details
+        /// </summary>
+        /// <param name="employeeTenureDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeTenureDTO InsertEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeTenureDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@employee_id", employeeTenureDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeTenureDTO.emp_code);                    
+                    cmd.Parameters.AddWithValue("@from_date", employeeTenureDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employeeTenureDTO.to_date);                    
+                    cmd.Parameters.AddWithValue("@reporting_manager", employeeTenureDTO.reporting_manager);
+                    cmd.Parameters.AddWithValue("@department", employeeTenureDTO.department);
+                    cmd.Parameters.AddWithValue("@designation", employeeTenureDTO.designation);
+                    cmd.Parameters.AddWithValue("@role", employeeTenureDTO.role);
+                    cmd.Parameters.AddWithValue("@active", employeeTenureDTO.active);
+                    cmd.Parameters.AddWithValue("@created_by", employeeTenureDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeTenureDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeTenureDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Tenure Details
+        /// </summary>
+        /// <param name="employeeTenureDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeTenureDTO UpdateEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeTenureDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeTenureDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeTenureDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeTenureDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@from_date", employeeTenureDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employeeTenureDTO.to_date);
+                    cmd.Parameters.AddWithValue("@reporting_manager", employeeTenureDTO.reporting_manager);
+                    cmd.Parameters.AddWithValue("@department", employeeTenureDTO.department);
+                    cmd.Parameters.AddWithValue("@designation", employeeTenureDTO.designation);
+                    cmd.Parameters.AddWithValue("@role", employeeTenureDTO.role);
+                    cmd.Parameters.AddWithValue("@active", employeeTenureDTO.active);
+                    cmd.Parameters.AddWithValue("@created_by", employeeTenureDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeTenureDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeTenureDTO;
+        }
     }
 }

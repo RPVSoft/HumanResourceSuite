@@ -710,7 +710,7 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
         }
 
         /// <summary>
-        /// Insert Employee Bank Details
+        /// Insert Employee Salary Details
         /// </summary>
         /// <param name="employeeSalaryDetailsDTO"></param>
         /// <returns></returns>
@@ -746,6 +746,105 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
             SingleResponseDTO<EmployeeSalaryDetailsDTO> response = new SingleResponseDTO<EmployeeSalaryDetailsDTO>();
             Exception exception;
             response.Result = _employeeProvider.UpdateEmployeeSalaryDetails(employeeSalaryDetailsDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Get Employee Tenure Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetTenureDetailsbyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeTenureDetailsById(int id)
+        {
+            SingleResponseDTO<EmployeeTenureDTO> response = new SingleResponseDTO<EmployeeTenureDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployeeTenureDetailsById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employee Tenure Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllTenureDetails")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeTenureDetails()
+        {
+            MultiResponseDTO<EmployeeTenureDTO> response = new MultiResponseDTO<EmployeeTenureDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployeeTenureDetails(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employee Tenure Details
+        /// </summary>
+        /// <param name="employeeTenureDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertTenureDetails")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployeeTenureDetails([FromBody] EmployeeTenureDTO employeeTenureDTO)
+        {
+            SingleResponseDTO<EmployeeTenureDTO> response = new SingleResponseDTO<EmployeeTenureDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployeeTenureDetails(employeeTenureDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employee Tenure Details
+        /// </summary>
+        /// <param name="employeeTenureDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateTenureDetails")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployeeTenureDetails([FromBody] EmployeeTenureDTO employeeTenureDTO)
+        {
+            SingleResponseDTO<EmployeeTenureDTO> response = new SingleResponseDTO<EmployeeTenureDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployeeTenureDetails(employeeTenureDTO, _options.Value, out exception);
             if (exception != null)
             {
                 Response.StatusCode = StatusCodes.Status500InternalServerError;

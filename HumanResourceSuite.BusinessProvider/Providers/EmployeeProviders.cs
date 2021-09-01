@@ -599,5 +599,84 @@ namespace HumanResourceSuite.BusinessProviders.Providers
         }
 
 
+        /// <summary>
+        /// Get Employee Tenure Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeTenureDTO> GetEmployeeTenureDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeTenureDTO> employeeTenureDTO = null;
+            try
+            {
+                employeeTenureDTO = _Employeerepository.GetEmployeeTenureDetails(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeTenureDTO;
+        }
+
+        /// <summary>
+        /// Get Employee Tenure Details by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeTenureDTO GetEmployeeTenureDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeTenureDTO employeeTenureDTO = null;
+            try
+            {
+                employeeTenureDTO = _Employeerepository.GetEmployeeTenureDetailsById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeTenureDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Tenure Details
+        /// </summary>
+        /// <param name="employeeTenureDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeTenureDTO InsertEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeTenureDTO = _Employeerepository.InsertEmployeeTenureDetails(employeeTenureDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeTenureDTO;
+        }
+        /// <summary>
+        /// Update Employee Tenure Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeTenureDTO UpdateEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeTenureDTO = _Employeerepository.UpdateEmployeeTenureDetails(employeeTenureDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeTenureDTO;
+        }
     }
 }
