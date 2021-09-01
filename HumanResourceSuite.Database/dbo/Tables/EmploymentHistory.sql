@@ -4,7 +4,7 @@
     [emp_code]           NCHAR (10)     NULL,
     [employer_name]      NVARCHAR (50)  NULL,
     [address]            NVARCHAR (100) NULL,
-    [city]               NVARCHAR (50)  NULL,
+    [city]               INT  NULL,
     [state]              INT            NULL,
     [country]            INT            NULL,
     [from_date]          DATETIME       NULL,
@@ -18,7 +18,8 @@
     [modified_date]      DATETIME       NULL,
     CONSTRAINT [PK_EmploymentHistory] PRIMARY KEY CLUSTERED ([id] ASC),
     CONSTRAINT [FK_EmploymentHistory_Employee_Id] FOREIGN KEY ([employee_id]) REFERENCES [dbo].[Employee] ([id]),
-    CONSTRAINT [FK_EmploymentHistory_Master_Country] FOREIGN KEY ([country]) REFERENCES [dbo].[Master] ([id]),
-    CONSTRAINT [FK_EmploymentHistory_Master_State] FOREIGN KEY ([state]) REFERENCES [dbo].[Master] ([id])
+    CONSTRAINT [FK_EmploymentHistory_Master_Country] FOREIGN KEY ([country]) REFERENCES [dbo].[Countries] ([id]),
+    CONSTRAINT [FK_EmploymentHistory_Master_State] FOREIGN KEY ([state]) REFERENCES [dbo].[States] ([id]),
+    CONSTRAINT [FK_EmploymentHistory_Master_City] FOREIGN KEY ([city]) REFERENCES [dbo].[Cities] ([id])
 );
 

@@ -857,5 +857,104 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
             return new JsonResult(response);
         }
 
+        /// <summary>
+        /// Get Employment History By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetEmploymentHistorybyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployementHistoryById(int id)
+        {
+            SingleResponseDTO<EmploymentHistoryDTO> response = new SingleResponseDTO<EmploymentHistoryDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployementHistoryById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employment History
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllEmploymentHistory")]
+        [Produces("application/json")]
+        public IActionResult GetEmployementHistory()
+        {
+            MultiResponseDTO<EmploymentHistoryDTO> response = new MultiResponseDTO<EmploymentHistoryDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployementHistory(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employment History
+        /// </summary>
+        /// <param name="employmentHistoryDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertEmploymentHistory")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployementHistory([FromBody] EmploymentHistoryDTO employmentHistoryDTO)
+        {
+            SingleResponseDTO<EmploymentHistoryDTO> response = new SingleResponseDTO<EmploymentHistoryDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployementHistory(employmentHistoryDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employment History
+        /// </summary>
+        /// <param name="employmentHistoryDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateEmploymentHistory")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployementHistory([FromBody] EmploymentHistoryDTO employmentHistoryDTO)
+        {
+            SingleResponseDTO<EmploymentHistoryDTO> response = new SingleResponseDTO<EmploymentHistoryDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployementHistory(employmentHistoryDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
     }
 }

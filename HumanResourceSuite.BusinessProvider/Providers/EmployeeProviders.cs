@@ -678,5 +678,85 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             }
             return employeeTenureDTO;
         }
+
+        /// <summary>
+        /// Get Employment History
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmploymentHistoryDTO> GetEmployementHistory(AppSettings settings, out Exception ex)
+        {
+            List<EmploymentHistoryDTO> employmentHistoryDTO = null;
+            try
+            {
+                employmentHistoryDTO = _Employeerepository.GetEmployementHistory(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employmentHistoryDTO;
+        }
+
+        /// <summary>
+        /// Get Employment History by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmploymentHistoryDTO GetEmployementHistoryById(int id, AppSettings settings, out Exception ex)
+        {
+            EmploymentHistoryDTO employmentHistoryDTO = null;
+            try
+            {
+                employmentHistoryDTO = _Employeerepository.GetEmployementHistoryById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employmentHistoryDTO;
+        }
+
+        /// <summary>
+        /// Insert Get Employment History
+        /// </summary>
+        /// <param name="employmentHistoryDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmploymentHistoryDTO InsertEmployementHistory(EmploymentHistoryDTO employmentHistoryDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employmentHistoryDTO = _Employeerepository.InsertEmployementHistory(employmentHistoryDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employmentHistoryDTO;
+        }
+        /// <summary>
+        /// Update Get Employment History
+        /// </summary>
+        /// <param name="employmentHistoryDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmploymentHistoryDTO UpdateEmployementHistory(EmploymentHistoryDTO employmentHistoryDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employmentHistoryDTO = _Employeerepository.UpdateEmployementHistory(employmentHistoryDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employmentHistoryDTO;
+        }
     }
 }

@@ -1569,5 +1569,201 @@ namespace HumanResourceSuite.DataProviders.Repository
             }
             return employeeTenureDTO;
         }
+
+        /// <summary>
+        /// Get Employment History
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmploymentHistoryDTO> GetEmployementHistory(AppSettings settings, out Exception ex)
+        {
+            List<EmploymentHistoryDTO> dataToReturn = new List<EmploymentHistoryDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmploymentHistory, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmploymentHistoryDTO data = new EmploymentHistoryDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.employer_name = GetStringValue(reader["employer_name"]);
+                        data.address = GetStringValue(reader["address"]);
+                        data.city = GetIntegerValue(reader["city"]);
+                        data.state = GetIntegerValue(reader["state"]);
+                        data.country = GetIntegerValue(reader["country"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.job_title = GetStringValue(reader["job_title"]);
+                        data.reason_for_leaving = GetStringValue(reader["reason_for_leaving"]);
+                        data.active = GetBitValue(reader["active"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employment History By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmploymentHistoryDTO GetEmployementHistoryById(int id, AppSettings settings, out Exception ex)
+        {
+            EmploymentHistoryDTO data = new EmploymentHistoryDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmploymentHistorybyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.employer_name = GetStringValue(reader["employer_name"]);
+                        data.address = GetStringValue(reader["address"]);
+                        data.city = GetIntegerValue(reader["city"]);
+                        data.state = GetIntegerValue(reader["state"]);
+                        data.country = GetIntegerValue(reader["country"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.job_title = GetStringValue(reader["job_title"]);
+                        data.reason_for_leaving = GetStringValue(reader["reason_for_leaving"]);
+                        data.active = GetBitValue(reader["active"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Employment History
+        /// </summary>
+        /// <param name="employmentHistoryDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmploymentHistoryDTO InsertEmployementHistory(EmploymentHistoryDTO employmentHistoryDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmploymentHistory, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@employee_id", employmentHistoryDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employmentHistoryDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@employer_name", employmentHistoryDTO.employer_name);
+                    cmd.Parameters.AddWithValue("@address", employmentHistoryDTO.address);
+                    cmd.Parameters.AddWithValue("@city", employmentHistoryDTO.city);
+                    cmd.Parameters.AddWithValue("@state", employmentHistoryDTO.state);
+                    cmd.Parameters.AddWithValue("@country", employmentHistoryDTO.country);
+                    cmd.Parameters.AddWithValue("@from_date", employmentHistoryDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employmentHistoryDTO.to_date);
+                    cmd.Parameters.AddWithValue("@job_title", employmentHistoryDTO.job_title);
+                    cmd.Parameters.AddWithValue("@reason_for_leaving", employmentHistoryDTO.reason_for_leaving);
+                    cmd.Parameters.AddWithValue("@active", employmentHistoryDTO.active);
+                    cmd.Parameters.AddWithValue("@created_by", employmentHistoryDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employmentHistoryDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employmentHistoryDTO;
+        }
+
+        /// <summary>
+        /// Update Employment History
+        /// </summary>
+        /// <param name="employmentHistoryDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmploymentHistoryDTO UpdateEmployementHistory(EmploymentHistoryDTO employmentHistoryDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmploymentHistory, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employmentHistoryDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employmentHistoryDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employmentHistoryDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@employer_name", employmentHistoryDTO.employer_name);
+                    cmd.Parameters.AddWithValue("@address", employmentHistoryDTO.address);
+                    cmd.Parameters.AddWithValue("@city", employmentHistoryDTO.city);
+                    cmd.Parameters.AddWithValue("@state", employmentHistoryDTO.state);
+                    cmd.Parameters.AddWithValue("@country", employmentHistoryDTO.country);
+                    cmd.Parameters.AddWithValue("@from_date", employmentHistoryDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employmentHistoryDTO.to_date);
+                    cmd.Parameters.AddWithValue("@job_title", employmentHistoryDTO.job_title);
+                    cmd.Parameters.AddWithValue("@reason_for_leaving", employmentHistoryDTO.reason_for_leaving);
+                    cmd.Parameters.AddWithValue("@active", employmentHistoryDTO.active);
+                    cmd.Parameters.AddWithValue("@created_by", employmentHistoryDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employmentHistoryDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employmentHistoryDTO;
+        }
     }
 }

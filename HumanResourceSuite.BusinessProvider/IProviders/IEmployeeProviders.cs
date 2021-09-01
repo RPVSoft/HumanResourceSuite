@@ -57,5 +57,11 @@ namespace HumanResourceSuite.BusinessProviders.IProviders
         public EmployeeTenureDTO InsertEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex);
         public EmployeeTenureDTO UpdateEmployeeTenureDetails(EmployeeTenureDTO employeeTenureDTO, AppSettings settings, out Exception ex);
 
+        // Employement History
+        public List<EmploymentHistoryDTO> GetEmployementHistory(AppSettings settings, out Exception ex);
+        public EmploymentHistoryDTO GetEmployementHistoryById(int id, AppSettings settings, out Exception ex);
+        public EmploymentHistoryDTO InsertEmployementHistory(EmploymentHistoryDTO employmentHistoryDTO, AppSettings settings, out Exception ex);
+        public EmploymentHistoryDTO UpdateEmployementHistory(EmploymentHistoryDTO employmentHistoryDTO, AppSettings settings, out Exception ex);
+
     }
 }

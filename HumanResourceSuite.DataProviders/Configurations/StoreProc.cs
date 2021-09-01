@@ -52,5 +52,9 @@ namespace HumanResourceSuite.DataProviders.Configurations
         public const string SP_GetEmployeeTenureDetailsbyId = "sp_GetEmployeeTenureDetailsById";
         public const string SP_InsertEmployeeTenureDetails = "sp_InsertEmployeeTenureDetails";
         public const string SP_UpdateEmployeeTenureDetails = "sp_UpdateEmployeeTenureDetails";
+        public const string SP_GetEmploymentHistory = "sp_GetEmploymentHistory";
+        public const string SP_GetEmploymentHistorybyId = "sp_GetEmploymentHistoryById";
+        public const string SP_InsertEmploymentHistory = "sp_InsertEmploymentHistory";
+        public const string SP_UpdateEmploymentHistory = "sp_UpdateEmploymentHistory";
     }
 }
