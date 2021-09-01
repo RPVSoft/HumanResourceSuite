@@ -1210,5 +1210,182 @@ namespace HumanResourceSuite.DataProviders.Repository
             return employeeQualificationDTO;
         }
 
+        /// <summary>
+        /// Get Employee Salary Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeSalaryDetailsDTO> GetEmployeeSalaryDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeSalaryDetailsDTO> dataToReturn = new List<EmployeeSalaryDetailsDTO>();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeSalaryDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        EmployeeSalaryDetailsDTO data = new EmployeeSalaryDetailsDTO();
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.tenure = GetIntegerValue(reader["tenure"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.financial_year = GetStringValue(reader["financial_year"]);
+                        data.basic_pay = GetStringValue(reader["basic_pay"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                        dataToReturn.Add(data);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return dataToReturn;
+        }
+
+        /// <summary>
+        /// Get Employee Salary Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeSalaryDetailsDTO GetEmployeeSalaryDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeSalaryDetailsDTO data = new EmployeeSalaryDetailsDTO();
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_GetEmployeeSalaryDetailsbyId, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", id);
+                    dbConn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        data.id = GetIntegerValue(reader["id"]);
+                        data.employee_id = GetIntegerValue(reader["employee_id"]);
+                        data.emp_code = GetStringValue(reader["emp_code"]);
+                        data.tenure = GetIntegerValue(reader["tenure"]);
+                        data.from_date = GetDateTimeValue(reader["from_date"]);
+                        data.to_date = GetDateTimeValue(reader["to_date"]);
+                        data.financial_year = GetStringValue(reader["financial_year"]);
+                        data.basic_pay = GetStringValue(reader["basic_pay"]);
+                        data.Created_By = GetStringValue(reader["created_by"]);
+                        data.Created_Date = GetDateTimeValue(reader["created_date"]);
+                        data.Modified_By = GetStringValue(reader["modified_by"]);
+                        data.Modified_Date = GetDateTimeValue(reader["modified_date"]);
+                    }
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return data;
+        }
+        /// <summary>
+        /// Insert Salary Bank Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeSalaryDetailsDTO InsertEmployeeSalaryDetails(EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_InsertEmployeeSalaryDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@employee_id", employeeSalaryDetailsDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeSalaryDetailsDTO.emp_code);                    
+                    cmd.Parameters.AddWithValue("@tenure", employeeSalaryDetailsDTO.tenure);
+                    cmd.Parameters.AddWithValue("@from_date", employeeSalaryDetailsDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employeeSalaryDetailsDTO.to_date);
+                    cmd.Parameters.AddWithValue("@financial_year", employeeSalaryDetailsDTO.financial_year);
+                    cmd.Parameters.AddWithValue("@basic_pay", employeeSalaryDetailsDTO.basic_pay);
+                    cmd.Parameters.AddWithValue("@created_by", employeeSalaryDetailsDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeSalaryDetailsDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeSalaryDetailsDTO;
+        }
+
+        /// <summary>
+        /// Update Employee Salary Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeSalaryDetailsDTO UpdateEmployeeSalaryDetails(EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            ex = null;
+            try
+            {
+                // Make a database call
+                using (SqlConnection dbConn = new SqlConnection(settings.DbConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(StoreProc.SP_UpdateEmployeeSalaryDetails, dbConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.AddWithValue("@id", employeeSalaryDetailsDTO.id);
+                    cmd.Parameters.AddWithValue("@employee_id", employeeSalaryDetailsDTO.employee_id);
+                    cmd.Parameters.AddWithValue("@emp_code", employeeSalaryDetailsDTO.emp_code);
+                    cmd.Parameters.AddWithValue("@tenure", employeeSalaryDetailsDTO.tenure);
+                    cmd.Parameters.AddWithValue("@from_date", employeeSalaryDetailsDTO.from_date);
+                    cmd.Parameters.AddWithValue("@to_date", employeeSalaryDetailsDTO.to_date);
+                    cmd.Parameters.AddWithValue("@financial_year", employeeSalaryDetailsDTO.financial_year);
+                    cmd.Parameters.AddWithValue("@basic_pay", employeeSalaryDetailsDTO.basic_pay);
+                    cmd.Parameters.AddWithValue("@created_by", employeeSalaryDetailsDTO.Created_By);
+                    cmd.Parameters.AddWithValue("@created_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@modified_by", employeeSalaryDetailsDTO.Modified_By);
+                    cmd.Parameters.AddWithValue("@modified_date", DateTime.Now);
+                    dbConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception exMsg)
+            {
+                ex = exMsg;
+            }
+            return employeeSalaryDetailsDTO;
+        }
+
+
     }
 }

@@ -658,5 +658,105 @@ namespace HumanResourceSuite.ApplicationInterfaceEndpoints.Controllers
                 Response.StatusCode = StatusCodes.Status200OK;
             return new JsonResult(response);
         }
+
+        /// <summary>
+        /// Get Employee Salary Details By Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetSalaryDetailsbyId/{id:int}")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeSalaryDetailsById(int id)
+        {
+            SingleResponseDTO<EmployeeSalaryDetailsDTO> response = new SingleResponseDTO<EmployeeSalaryDetailsDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.GetEmployeeSalaryDetailsById(id, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+                // Log exception into database
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Get Employee Salary Details
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllSalaryDetails")]
+        [Produces("application/json")]
+        public IActionResult GetEmployeeSalaryDetails()
+        {
+            MultiResponseDTO<EmployeeSalaryDetailsDTO> response = new MultiResponseDTO<EmployeeSalaryDetailsDTO>();
+            Exception exception;
+            response.Data = _employeeProvider.GetEmployeeSalaryDetails(_options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Data.Count <= 0)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
+        /// <summary>
+        /// Insert Employee Bank Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("InsertSalaryDetails")]
+        [Produces("application/json")]
+        public IActionResult InsertEmployeeSalaryDetails([FromBody] EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO)
+        {
+            SingleResponseDTO<EmployeeSalaryDetailsDTO> response = new SingleResponseDTO<EmployeeSalaryDetailsDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.InsertEmployeeSalaryDetails(employeeSalaryDetailsDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+        /// <summary>
+        /// Update Employee Salary Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateSalaryDetails")]
+        [Produces("application/json")]
+        public IActionResult UpdateEmployeeSalaryDetails([FromBody] EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO)
+        {
+            SingleResponseDTO<EmployeeSalaryDetailsDTO> response = new SingleResponseDTO<EmployeeSalaryDetailsDTO>();
+            Exception exception;
+            response.Result = _employeeProvider.UpdateEmployeeSalaryDetails(employeeSalaryDetailsDTO, _options.Value, out exception);
+            if (exception != null)
+            {
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
+                response.ErrorMessage = exception;
+            }
+            else if (response.Result == null)
+                Response.StatusCode = StatusCodes.Status204NoContent;
+            else
+                Response.StatusCode = StatusCodes.Status200OK;
+            return new JsonResult(response);
+        }
+
     }
 }

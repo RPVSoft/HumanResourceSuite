@@ -518,5 +518,86 @@ namespace HumanResourceSuite.BusinessProviders.Providers
             return employeeQualificationDTO;
         }
 
+        /// <summary>
+        /// Get Employee Salary Details
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public List<EmployeeSalaryDetailsDTO> GetEmployeeSalaryDetails(AppSettings settings, out Exception ex)
+        {
+            List<EmployeeSalaryDetailsDTO> employeeSalaryDetailsDTO = null;
+            try
+            {
+                employeeSalaryDetailsDTO = _Employeerepository.GetEmployeeSalaryDetails(settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeSalaryDetailsDTO;
+        }
+
+        /// <summary>
+        /// Get Employee Salary Details by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeSalaryDetailsDTO GetEmployeeSalaryDetailsById(int id, AppSettings settings, out Exception ex)
+        {
+            EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO = null;
+            try
+            {
+                employeeSalaryDetailsDTO = _Employeerepository.GetEmployeeSalaryDetailsById(id, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeSalaryDetailsDTO;
+        }
+
+        /// <summary>
+        /// Insert Employee Salary Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeSalaryDetailsDTO InsertEmployeeSalaryDetails(EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeSalaryDetailsDTO = _Employeerepository.InsertEmployeeSalaryDetails(employeeSalaryDetailsDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeSalaryDetailsDTO;
+        }
+        /// <summary>
+        /// Update Employee Salary Details
+        /// </summary>
+        /// <param name="employeeSalaryDetailsDTO"></param>
+        /// <param name="settings"></param>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public EmployeeSalaryDetailsDTO UpdateEmployeeSalaryDetails(EmployeeSalaryDetailsDTO employeeSalaryDetailsDTO, AppSettings settings, out Exception ex)
+        {
+            try
+            {
+                employeeSalaryDetailsDTO = _Employeerepository.UpdateEmployeeSalaryDetails(employeeSalaryDetailsDTO, settings, out ex);
+            }
+            catch (Exception exception)
+            {
+                ex = exception;
+            }
+            return employeeSalaryDetailsDTO;
+        }
+
+
     }
 }

@@ -44,5 +44,9 @@ namespace HumanResourceSuite.DataProviders.Configurations
         public const string SP_GetEmployeeQualificationbyId = "sp_GetEmployeeQualificationById";
         public const string SP_InsertEmployeeQualification = "sp_InsertEmployeeQualification";
         public const string SP_UpdateEmployeeQualification = "sp_UpdateEmployeeQualification";
+        public const string SP_GetEmployeeSalaryDetails = "sp_GetEmployeeSalaryDetails";
+        public const string SP_GetEmployeeSalaryDetailsbyId = "sp_GetEmployeeSalaryDetailsById";
+        public const string SP_InsertEmployeeSalaryDetails = "sp_InsertEmployeeSalaryDetails";
+        public const string SP_UpdateEmployeeSalaryDetails = "sp_UpdateEmployeeSalaryDetails";
     }
 }
