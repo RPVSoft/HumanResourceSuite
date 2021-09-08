@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewData["Title"] = "Lead Index";
+
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    
+    <link href="~/assets/employee/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/employee/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/employee/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/employee/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/assets/employee/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/assets/employee/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main id="main">
+
+        <section id="contact1" class="contact">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <p>Lead Form</p>
+                </header>
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-6">
+
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    
+                                    <h3>Planning</h3>
+                                    <p>Aligning HR strategy with business strategy</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h3>Engineering</h3>
+                                    <p>Re-engineering : organization processes</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h3>Employee Management</h3>
+                                    <p>Listening and responding to employees</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <h3>Transformation</h3>
+                                    <p>Managing transformation and change</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <form action="forms/contact.php" method="post" class="php-email-form">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="First Name" required>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Last Name" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Company" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Mobile Number" required>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Industry Type" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Your Email" required>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit">Register</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+       
+    </main>
+
+
+
+</body>
+</html>
+    @section Scripts
+{
+
+
+        <!-- Vendor JS Files -->
+        <script src="~/assets/employee/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="~/assets/employee/aos/aos.js"></script>
+        <script src="~/assets/employee/php-email-form/validate.js"></script>
+        <script src="~/assets/employee/swiper/swiper-bundle.min.js"></script>
+        <script src="~/assets/employee/purecounter/purecounter.js"></script>
+        <script src="~/assets/employee/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="~/assets/employee/glightbox/js/glightbox.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="~/assets/js/main.js"></script>
+
+
+
+
+
+        @*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>*@
+       
+
+
+
+
+    }

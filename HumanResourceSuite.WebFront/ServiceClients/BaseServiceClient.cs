@@ -14,7 +14,7 @@ namespace HumanResourceSuite.WebFront.ServiceClients
         protected HttpClient PrepareHttpClient()
         {
             var client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:55587/");
+            client.BaseAddress = new Uri("http://localhost:44372/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             return client;

@@ -29,11 +29,11 @@ namespace HumanResourceSuite.WebFront.ServiceClients
                     HttpResponseMessage response = await _client.GetAsync(RequestURI.MasterGetAll);
                     if (response.IsSuccessStatusCode)
                     {
-                        var content = await response.Content.ReadAsAsync<MultiResponseDTO<MasterDTO>>();
+                        var content = await response.Content.ReadAsAsync<ResponseDTO<MasterDTO>>();
                     }
                     else
                     {
-                        var content = await response.Content.ReadAsAsync<MultiResponseDTO<MasterDTO>>();
+                        var content = await response.Content.ReadAsAsync<ResponseDTO<MasterDTO>>();
                     }
                 }
             }
@@ -60,11 +60,11 @@ namespace HumanResourceSuite.WebFront.ServiceClients
                     HttpResponseMessage response = await _client.GetAsync(RequestURI.MasterGet);
                     if (response.IsSuccessStatusCode)
                     {
-                        var content = await response.Content.ReadAsAsync<MultiResponseDTO<MasterDTO>>();
+                        var content = await response.Content.ReadAsAsync<ResponseDTO<MasterDTO>>();
                     }
                     else
                     {
-                        var content = await response.Content.ReadAsAsync<MultiResponseDTO<MasterDTO>>();
+                        var content = await response.Content.ReadAsAsync<ResponseDTO<MasterDTO>>();
                     }
                 }
             }

@@ -1,0 +1,343 @@
+﻿
+@{
+    ViewData["Title"] = "Company";
+
+
+}
+
+<link href="~/css/Admin.css" rel="stylesheet" />
+
+
+<div class="page-content">
+    <div class="form-v4-content" style="margin: 0px; box-shadow: none; width: 100%;">
+
+        <form class="form-detail" method="post" action="#" id="myform" novalidate="novalidate">
+            <h2 style="text-align: center;">Company Details</h2>
+
+            @*<ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Menu 1</a>
+                    </li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                </ul>*@
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#menu1">Location</a></li>
+                @*<li><a data-toggle="tab" href="#menu2">Menu 2</a></li>*@
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="home" class="tab-pane fade in active">
+
+                    @*helo*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_legal_name">Legal Name</label>
+                            <input id="txt_legal_name" name="legal_name" class="input-text" type="text" />
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_founded_year">Founded Year</label>
+                            <select id="ddl_founded_year" name="founded_year" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">1990</option>
+                                <option value="2">1991</option>
+                                <option value="3">1992</option>
+                                <option value="4">1993</option>
+                                <option value="5">1994</option>
+                                <option value="6">1995</option>
+                                <option value="7">1996</option>
+                                <option value="8">1997</option>
+                                <option value="9">1998</option>
+                                <option value="10">1999</option>
+                                <option value="11">2000</option>
+                                <option value="12">2001</option>
+                                <option value="13">2002</option>
+                                <option value="14">2003</option>
+                                <option value="15">2004</option>
+                                <option value="16">2005</option>
+                                <option value="17">2006</option>
+                                <option value="18">2007</option>
+                                <option value="19">2008</option>
+                                <option value="20">2009</option>
+                                <option value="21">2010</option>
+                                <option value="22">2011</option>
+                                <option value="23">2012</option>
+                                <option value="24">2013</option>
+                                <option value="25">2014</option>
+                                <option value="26">2015</option>
+                                <option value="27">2016</option>
+                                <option value="28">2017</option>
+                                <option value="29">2018</option>
+                                <option value="30">2019</option>
+                                <option value="31">2020</option>
+                                <option value="32">2021</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_active">Active</label>
+                            <select id="ddl_active" name="active" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_website_url">Website Url</label>
+                            <input id="txt_website_url" name="website_url" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_verified">Verified</label>
+                            <input id="txt_verified" name="verified" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row form-row-1">
+                            <label for="txt_logo_url">Logo Url</label>
+                            <input id="txt_logo_url" name="logo_url" class="input-text" type="text" />
+                        </div>
+
+                        @*<div class="form-row form-row-last">
+                                <input type="file" name="register" class="register" id="btn_attach" value="Attach">
+                            </div>*@
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_primary_user_email">Primary_User Email</label>
+                            <input type="text" name="primary_user_email" id="txt_primary_user_email" class="input-text" required="" aria-required="true">
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_primary_user_name">Primary User Name</label>
+                            <input type="text" name="primary_user_name" id="txt_primary_user_name" class="input-text" required="" aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="ddl_company_size">Company Size</label>
+                            <select id="ddl_company_size" name="company_size" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">< 20</option>
+                                <option value="2">20-50</option>
+                                <option value="3">50-200</option>
+                                <option value="4">200 < </option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_industry_type">Industry Type</label>
+                            <select id="ddl_industry_type" name="industry_type" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Real Sector</option>
+                                <option value="2">Media and Entertainment</option>
+                                <option value="3">IT</option>
+                                <option value="4">Finance</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_status">Status</label>
+                            <select id="ddl_status" name="status" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Active</option>
+                                <option value="1">In-Active</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row form-row-1">
+                            <label for="txt_overview">Overview</label>
+                            <input id="txt_overview" name="overview" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_home" class="register" id="btn_save_home" value="Register">
+                    </div>
+
+                    @*helo*@
+
+
+                </div>
+
+                <div id="menu1" class="tab-pane fade">
+
+
+                    @*jelo*@
+
+
+                    <div class="form-row" style="margin-top:2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_address">Address</label>
+                            <input id="txt_address" name="address" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="ddl_country">Country</label>
+                            <select id="ddl_country" name="country" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_state">State</label>
+                            <select id="ddl_state" name="state" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_city">City</label>
+                            <select id="ddl_city" name="city" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_zip_code">Zip Code</label>
+                            <input id="txt_zip_code" name="zip_code" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_poc_email">POC Email</label>
+                            <input type="text" name="poc_email" id="txt_poc_email" class="input-text" required="" aria-required="true">
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_poc_name">POC Name</label>
+                            <input type="text" name="poc_name" id="txt_poc_name" class="input-text" required="" aria-required="true">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_location" class="register" id="btn_save_location" value="Register">
+                    </div>
+
+
+
+                    @*jelo*@
+
+                </div>
+
+                @*<div id="menu2" class="tab-pane fade">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>*@
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var data = {};
+
+            $("#btn_save_home").click(function () {
+
+                data.Mode = 1;
+                data.Id = 0;
+                data.First_name = $('#txt_first_name').val();
+                data.Last_name = $('#txt_last_name').val();
+                data.Mobile_no = $('#txt_mobile_no').val();
+                data.Email_address = $('#txt_email_address').val();
+                data.Company = $('#txt_company').val();
+                data.Industry_type = 1;
+
+                InsertUpdateLeadDetails(data);
+            });
+
+            $("#btn_save_location").click(function () {
+
+                data.Mode = 1;
+                data.Id = 0;
+                data.First_name = $('#txt_first_name').val();
+                data.Last_name = $('#txt_last_name').val();
+                data.Mobile_no = $('#txt_mobile_no').val();
+                data.Email_address = $('#txt_email_address').val();
+                data.Company = $('#txt_company').val();
+                data.Industry_type = 1;
+
+                InsertUpdateLeadDetails(data);
+            });
+
+        });
+
+
+        function InsertUpdateLeadDetails(data) {
+            //  alert(JSON.stringify(data));
+
+            $.ajax({
+
+                url: "Home/LeadCreateAndUpdate",   //'Url.Action("LeadCreateAndUpdate")',
+
+                dataType: "json",
+                data: JSON.stringify({ 'cnt': data }),
+                type: "POST",
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                async: true,
+                success: function (result) {
+                    var getResult = result.d;
+                    if (getResult != "0") {
+                        alert(getResult);
+                        //GetLeadsDetails(0, "");
+                    }
+                    else {
+                        alert("There is an Error");
+                    }
+                },
+                error: function (err) {
+                    // alert(err.statusText)
+                }
+            });
+    }
+    </script>
+
+}

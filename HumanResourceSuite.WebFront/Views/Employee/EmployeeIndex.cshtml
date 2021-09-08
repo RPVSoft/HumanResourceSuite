@@ -1,0 +1,849 @@
+﻿
+@{
+    ViewData["Title"] = "Employee";
+
+
+}
+
+<link href="~/css/Admin.css" rel="stylesheet" />
+
+
+<div class="page-content">
+    <div class="form-v4-content" style="margin: 0px; box-shadow: none; width: 100%;">
+
+        <form class="form-detail" method="post" action="#" id="myform" novalidate="novalidate">
+            <h2 style="text-align: center;">Employee Details</h2>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#menu1">Address</a></li>
+                <li><a data-toggle="tab" href="#menu2">Bank Details</a></li>
+                <li><a data-toggle="tab" href="#menu3">Investment</a></li>
+                <li><a data-toggle="tab" href="#menu4">Leave</a></li>
+                <li><a data-toggle="tab" href="#menu5">Qualification</a></li>
+                <li><a data-toggle="tab" href="#menu6">Salary</a></li>
+                <li><a data-toggle="tab" href="#menu7">Tenure</a></li>
+                <li><a data-toggle="tab" href="#menu6">History</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="home" class="tab-pane fade in active">
+
+                    @*Employee*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_photo_url">Photo URL</label>
+                            <input id="txt_photo_url" name="photo_url" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_first_name">First Name</label>
+                            <input id="txt_first_name" name="first_name" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_middle_name">Middle Name</label>
+                            <input id="txt_middle_name" name="middle_name" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_last_name">Last Name</label>
+                            <input id="txt_last_name" name="last_name" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_vendor_id">Vendor ID</label>
+                            <input id="txt_vendor_id" name="vendor_id" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_active">Status</label>
+                            <input id="txt_active" name="active" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_pan_number">Pan Number</label>
+                            <input id="txt_pan_number" name="pan_number" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_gender">Gender</label>
+                            <select id="ddl_gender" name="gender" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_marital_status">Marital Status</label>
+                            <select id="ddl_marital_status" name="marital_status" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Un-Married</option>
+                                <option value="2">Married</option>
+                            </select>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_dob">DOB</label>
+
+                            <div class='input-group date AppFormdatetimepicker' id='dob'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_dob" />
+                                	<span class="input-group-addon">
+                                	<span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                               
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_personal_email">Personal Email</label>
+                            <input type="text" name="personal_email" id="txt_personal_email" class="input-text" required="" aria-required="true">
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_work_email">Work Email</label>
+                            <input type="text" name="work_email" id="txt_work_email" class="input-text" required="" aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_phone_ext">Extension</label>
+                            <input type="text" name="phone_ext" id="txt_phone_ext" class="input-text" required="" aria-required="true">
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_work_phone">Work Phone</label>
+                            <input type="text" name="work_phone" id="txt_work_phone" class="input-text" required="" aria-required="true">
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_mobile_number">Mobile Number</label>
+                            <input type="text" name="mobile_number" id="txt_mobile_number" class="input-text" required="" aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_self" class="register" id="btn_save_self" value="Submit">
+                    </div>
+
+                    @*Employee*@
+
+
+                </div>
+
+                <div id="menu1" class="tab-pane fade">
+
+
+                    @*Address*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_type">Type</label>
+                            <input id="txt_type" name="type" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row form-row-1">
+                            <label for="txt_address_line">Address</label>
+                            <input id="txt_address_line" name="address_line" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="ddl_country">Country</label>
+                            <select id="ddl_country" name="country" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_state">State</label>
+                            <select id="ddl_state" name="state" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_city">City</label>
+                            <select id="ddl_city" name="city" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_address" class="register" id="btn_save_address" value="Submit">
+                    </div>
+
+                    @*Address*@
+
+
+                </div>
+
+
+                <div id="menu2" class="tab-pane fade">
+
+                    @*Bank*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_active">Active</label>
+                            <input id="txt_active" name="active" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_bank">Bank</label>
+                            <input id="txt_bank" name="bank" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_account_number">Account Number</label>
+                            <input id="txt_account_number" name="account_number" class="input-text" type="text" />
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_ifsc_code">IFSC Code</label>
+                            <input id="txt_ifsc_code" name="ifsc_code" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_bank" class="register" id="btn_save_bank" value="Submit">
+                    </div>
+
+                    @*Bank*@
+
+
+                </div>
+
+                <div id="menu3" class="tab-pane fade">
+
+                    @*Investment*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="ddl_finantial_year">Finantial Year</label>
+                            <select id="ddl_finantial_year" name="finantial_year" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">2015</option>
+                                <option value="2">2016</option>
+                                <option value="3">2017</option>
+                                <option value="4">2018</option>
+                                <option value="5">2019</option>
+                                <option value="6">2020</option>
+                                <option value="7">2021</option>
+                                <option value="8">2022</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_house_rent_allowance">HRA</label>
+                            <input id="txt_house_rent_allowance" name="house_rent_allowance" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_lic_premium">LIC Premium</label>
+                            <input id="txt_lic_premium" name="lic_premium" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_provident_fund">Provident Fund</label>
+                            <input id="txt_provident_fund" name="provident_fund" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_public_provident_fund">Public PF</label>
+                            <input id="txt_public_provident_fund" name="public_provident_fund" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_voluntary_provident_fund">Voluntary</label>
+                            <input id="txt_voluntary_provident_fund" name="voluntary_provident_fund" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_nsc">NSC</label>
+                            <input id="txt_nsc" name="nsc" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_interest_nsc">Interest NSC</label>
+                            <input id="txt_interest_nsc" name="interest_nsc" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_ulip">ULIP</label>
+                            <input id="txt_ulip" name="ulip" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_mutual_fund">Mutual Fund</label>
+                            <input id="txt_mutual_fund" name="mutual_fund" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_tution_fees">Tution Fees</label>
+                            <input id="txt_tution_fees" name="tution_fees" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_principal_repayment_house_loan">Principal Repayment HL</label>
+                            <input id="txt_principal_repayment_house_loan" name="principal_repayment_house_loan" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_house_stamp_duty_registration_charge">House Stamp Duty Charge</label>
+                            <input id="txt_house_stamp_duty_registration_charge" name="house_stamp_duty_registration_charge" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_infrastructure_bonds">Infrastructure Bonds</label>
+                            <input id="txt_infrastructure_bonds" name="infrastructure_bonds" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_bank_fixed_deposite">Bank FD</label>
+                            <input id="txt_bank_fixed_deposite" name="bank_fixed_deposite" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_post_office_term_deposite">PO Term Deposite</label>
+                            <input id="txt_post_office_term_deposite" name="post_office_term_deposite" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_home_loan_interest">Home Loan Int</label>
+                            <input id="txt_home_loan_interest" name="home_loan_interest" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_medical_insurance_premium">Medical Ins Prem</label>
+                            <input id="txt_medical_insurance_premium" name="medical_insurance_premium" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_medical_insurance_premium_parent">Medical Ins Prem Parent</label>
+                            <input id="txt_medical_insurance_premium_parent" name="medical_insurance_premium_parent" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_preventive_health_checkup">Preventive Health Checkup</label>
+                            <input id="txt_preventive_health_checkup" name="preventive_health_checkup" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_investment" class="register" id="btn_save_investment" value="Submit">
+                    </div>
+
+                    @*Investment*@
+
+
+                </div>
+
+
+                <div id="menu4" class="tab-pane fade">
+
+                    @*leave*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_leave_type">Leave Type</label>
+                            <select id="ddl_leave_type" name="leave_type" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Casual Leave</option>
+                                <option value="2">Medical Leave</option>
+                                <option value="3">Leave Without Pay</option>
+                                <option value="4">Floating Leave</option>
+                                <option value="5">Maternity Leave</option>
+                                <option value="6">Paternity Leave</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row form-row-1">
+                            <label for="txt_reason">Reason</label>
+                            <input id="txt_reason" name="reason" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_from_date">From Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='leave_from_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_leave_from_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_to_date">To Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='leave_to_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_leave_to_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_status">Status</label>
+                            <input id="txt_status" name="status" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_leave" class="register" id="btn_save_leave" value="Submit">
+                    </div>
+
+                    @*leave*@
+
+
+                </div>
+
+
+                <div id="menu5" class="tab-pane fade">
+
+                    @*Qualification*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_qualification_level">Qualification Level</label>
+                            <select id="ddl_qualification_level" name="qualification_level" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Schooling</option>
+                                <option value="2">Diploma</option>
+                                <option value="3">Graduate</option>
+                                <option value="4">Post-Graduate</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="ddl_course">Course</label>
+                            <select id="ddl_course" name="course" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Bachlor of Business</option>
+                                <option value="2">Bachlor of Finance</option>
+                                <option value="3">Bachlor of Mass Comm</option>
+                                <option value="4">Bachlor of Computer Application</option>
+                                <option value="5">PG of Business</option>
+                                <option value="6">PG of Finance</option>
+                                <option value="7">PG of Mass Comm</option>
+                                <option value="8">PG of Computer Application</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_specialization">Specialization</label>
+                            <input id="txt_specialization" name="specialization" class="input-text" type="text" />
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-row form-row-1">
+                            <label for="txt_school_or_university">School / University</label>
+                            <input id="txt_school_or_university" name="school_or_university" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_marks_percentage">Marks Percentage</label>
+                            <input id="txt_marks_percentage" name="marks_percentage" class="input-text" type="text" />
+
+
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_verified">Verified</label>
+                            <input id="txt_verified" name="verified" class="input-text" type="text" />
+
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <input type="submit" name="register_qualification_add" class="register" id="btn_save_qualification_add" value="Add">
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_qualification" class="register" id="btn_save_qualification" value="Submit">
+                    </div>
+
+                    @*Qualification*@
+
+                </div>
+
+
+                <div id="menu6" class="tab-pane fade">
+
+                    @*Salary*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="txt_tenure">Tenure</label>
+                            <input id="txt_tenure" name="tenure" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="ddl_financial_year">Financial Year</label>
+                            <select id="ddl_financial_year" name="financial_year" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">2015</option>
+                                <option value="2">2016</option>
+                                <option value="3">2017</option>
+                                <option value="4">2018</option>
+                                <option value="5">2019</option>
+                                <option value="6">2020</option>
+                                <option value="7">2021</option>
+                                <option value="8">2022</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_from_date">From Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='salary_from_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_salary_from_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_to_date">To Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='salary_to_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_salary_to_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_basic_pay">Basic Pay</label>
+                            <input id="txt_basic_pay" name="basic_pay" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_salary" class="register" id="btn_save_salary" value="Submit">
+                    </div>
+
+                    @*Salary*@
+
+                </div>
+
+
+                <div id="menu7" class="tab-pane fade">
+
+                    @*Tenure*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_from_date">From Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='tenure_from_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_tenure_from_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_to_date">To Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='tenure_to_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_tenure_to_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_role">Role</label>
+                            <input id="txt_role" name="role" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_reporting_manager">Reporting Manager</label>
+                            <input id="txt_reporting_manager" name="reporting_manager" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_department">Department</label>
+                            <input id="txt_department" name="department" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_designation">Designation</label>
+                            <input id="txt_designation" name="designation" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_tenure" class="register" id="btn_save_tenure" value="Submit">
+                    </div>
+
+                    @*Tenure*@
+
+                </div>
+
+
+                <div id="menu8" class="tab-pane fade">
+
+                    @*Employment*@
+
+                    <div class="form-group" style=" margin-top: 2%;">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employee_code">Employee Code</label>
+                            <input id="txt_employee_code" name="employee_code" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_employer_name">Employer Name</label>
+                            <input id="txt_employer_name" name="employer_name" class="input-text" type="text" />
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_address">Address</label>
+                            <input id="txt_address" name="address" class="input-text" type="text" />
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="ddl_country">Country</label>
+                            <select id="ddl_country" name="country" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">India</option>
+                                <option value="2">USA</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_state">State</label>
+                            <select id="ddl_state" name="state" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">Delhi</option>
+                                <option value="2">Uttar Pradesh</option>
+                                <option value="3">Haryana</option>
+                                <option value="4">Bihar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row form-row-1">
+                            <label for="ddl_city">City</label>
+                            <select id="ddl_city" name="city" class="selectBox form-control" style=" height: 58%; margin-top: -2%;">
+                                <option value="0">------------Select------------</option>
+                                <option value="1">New Delhi</option>
+                                <option value="2">Karawal Nagar</option>
+                                <option value="3">Dwarka</option>
+                                <option value="4">Mahrouli</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="txt_from_date">From Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='employment_from_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_employment_from_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_to_date">To Date</label>
+                            <div class='input-group date AppFormdatetimepicker' id='employment_to_date'>
+                                	<input type='text' class="input-text" style=" margin-bottom: 0;" id="txt_employment_to_date" />
+                                	<span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="txt_job_title">Job Title</label>
+                            <input id="txt_job_title" name="job_title" class="input-text" type="text" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row form-row-1">
+                            <label for="txt_reason_for_leaving">Reason For Leaving</label>
+                            <input id="txt_reason_for_leaving" name="reason_for_leaving" class="input-text" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" name="register_employment" class="register" id="btn_save_employment" value="Submit">
+                    </div>
+
+                    @*Employment*@
+
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+
+    <script type="text/javascript">
+        
+        	$(document).ready(function () {
+            	var data = {};
+            
+            
+            
+        });
+        
+        	$(function () {
+            	//pravesh
+            	$('#dob').datetimepicker({ defaultDate: new Date() });
+            	$('#leave_from_date').datetimepicker({ defaultDate: new Date() });
+            	$('#leave_to_date').datetimepicker({ defaultDate: new Date() });
+            	$('#salary_from_date').datetimepicker({ defaultDate: new Date() });
+            	$('#salary_to_date').datetimepicker({ defaultDate: new Date() });
+            	$('#tenure_from_date').datetimepicker({ defaultDate: new Date() });
+            	$('#tenure_to_date').datetimepicker({ defaultDate: new Date() });
+            	$('#employment_from_date').datetimepicker({ defaultDate: new Date() });
+            	$('#employment_to_date').datetimepicker({ defaultDate: new Date() });
+            
+            
+        });
+        
+        </script>
+
+}

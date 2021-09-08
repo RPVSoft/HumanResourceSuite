@@ -15,4 +15,10 @@ namespace HumanResourceSuite.DataObjects
         public T Result { get; set; }
         public Exception ErrorMessage { get; set; }
     }
+
+    public class ResponseDTO<T>
+    {
+        public List<T> Data { get; set; }
+        public Exception ErrorMessage { get; set; }
+    }
 }
